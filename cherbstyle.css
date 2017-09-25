@@ -1,0 +1,75 @@
+/*can target descendants by "li a {" (anchor tags inside a list item), or "div img {" etc*/
+* { /*CSS reset*/
+	padding: 0;
+	margin: 0;
+
+}
+body {
+	background-color: #327499;
+	text-align: center;
+	font-size: 35px;
+	color: #23526D;
+	font-family: Trebuchet MS, sans-serif;
+	line-height: 1.5;
+}
+a {
+	text-decoration: none;
+	color: #803337;
+}
+.special { /*refers to my header image with class="special". just write "img {" to refer to all images*/
+/*class = "special hello" means an element is part of both the class special and the class hello	*/
+    border:8px solid #23526D;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+h1 {
+	padding-top: 15px;
+    padding-bottom: 15px;
+}
+div {
+	max-width: 60%;
+	margin: 0 auto;
+	margin-top: 30px;
+    margin-bottom: 30px;
+	background-image:url(background.png);
+	padding:30px;
+    background-origin: content-box;
+}
+/*FORMS*/
+input[type=text], input[type=submit], input[type=reset] {
+    padding: 10px 10px;
+ }
+input[type=text] {
+	width: 35%;
+}
+input {
+	font-size: 1em;
+	background-color: transparent;
+	color: #23526D;
+	font-family: Trebuchet MS, sans-serif
+    margin: 10px 0;
+    border: 4px solid #275D7B;
+    border-radius: 15px;
+    box-sizing: border-box
+}
+input:focus { /*remove blue outline on click, add own border*/
+    outline: 0;
+    border: 4px solid #23526D;
+}
+/*styling placeholder text for different browsers*/
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	color: #23526D;
+    opacity:  0.5
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: #23526D;
+    opacity:  0.5
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #23526D;
+    opacity:  0.5
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: #23526D;
+    opacity:  0.5
+}
