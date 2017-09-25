@@ -1,0 +1,47 @@
+* { /*CSS reset*/
+	padding: 0; 
+	margin: 0; 
+	background-color: #282423;
+	color: white; /*#A84B9C*/
+}
+.container {
+	/*sets some padding outside the collection (white box), even when the screen is very thin.
+	can't just add a margin to the collection (white box) as margins are being auto-generated to center it when screen is wide
+	this simulates a min-margin for the collection (white box)*/
+	padding: 0 5vmax;
+}
+#collection {
+	overflow: auto;  /*means contained elements with float:left are all contained properly e.g. in a border*/
+	max-width: 700px;
+	padding: 1vmax;
+	margin: auto;
+	border: 0.5vmax solid white;
+}
+.holder { /*acts as container for each image, so each one can have fixed height and width*/
+	float: left; /*makes images line up and squeeze together right (add overflow:auto on containing element to contain all properly)*/
+	max-width: 250px; /*max width so we can have nice margins*/
+	width: 30%; /*set width by size of screen*/
+	max-height: 150px; /*sets a limit for image height, in correlation with image width*/
+	height: 18vw; /*make the height scale with width of screen, like image width*/
+	padding: 1.6%;
+	/*border: 0.01vmax solid white;*/
+}
+.holder img {
+	width: 100%;
+	/*move top of image to halfway down container. then, move image up by half its own height to center it in container*/
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+h1 {
+	font-family: 'Josefin Sans', 'Trebuchet MS', sans-serif;
+	letter-spacing: 1vmax;
+	margin: 3vmax 10vmax;
+	font-size: 50px; /*fallback*/
+    font-size: 5vmax;
+    text-transform: lowercase;
+    padding-bottom: 0.5vmax;
+    border-bottom: 0.5vmax solid white;
+    width: 30%;
+    text-shadow: 2px 0px 10px white;
+}
