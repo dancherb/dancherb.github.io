@@ -1,3 +1,6 @@
+html {
+  height: 100%
+}
 body {
 	background-image: url("https://images.unsplash.com/photo-1442508748335-fde9c3f58fd9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=4cdb71ebb68575bde539cbd39a4a4e49");
 	background-size: cover;
