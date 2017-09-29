@@ -6,7 +6,7 @@
     <link rel = "stylesheet" type = "text/css" href = "cherbstyle.css"/>
 </head>
 <body>
-	 <a href="hello.html"><img src="mushroom.png" width="180" alt="i am a mushroom" class="special"></a>
+	 <a href="hello.html"><img src="mushroom.png" width="180" alt="i am a mushroom" class="special" id="mushroom"></a>
 	<h1>Touch me</h1>
 	<div>
 		<form>
@@ -14,7 +14,9 @@
 			<input id="text1" name="textbox" type="text" placeholder="hello" required pattern=".{3,15}" title="3 to 15 characters pls">
 			<input type="submit" value="go">
 			<input type="reset" value="start over">
+			<input type="button" value="play" id="playButton">
 		</form>
 	</div>
+	<script src="formscript.js"></script>
 </body>
 </html>
