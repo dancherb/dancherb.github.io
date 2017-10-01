@@ -1,0 +1,19 @@
+* { /*CSS reset*/
+	padding: 0;
+	margin: 0;
+}
+body {
+	background-color: #2188C2;
+	text-align: center;
+	font-size: 35px;
+	color: #3F3F3F;
+	font-family: Trebuchet MS, sans-serif;
+	line-height: 1.5;
+}
+canvas {
+  margin: 30px auto;
+}
+#shade {
+	position: absolute; top: 30px; left: auto;
+	transform: translateX(-100%);
+}
