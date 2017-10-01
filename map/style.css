@@ -14,6 +14,6 @@ canvas {
   margin: 30px auto;
 }
 #shade {
-	position: absolute; top: 30px; left: auto;
-	transform: translateX(-100%);
+	/*position: absolute; top: 30px; left: auto;*/
+	transform: translateY(-107.5%);
 }
