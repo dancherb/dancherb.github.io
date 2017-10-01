@@ -7,3 +7,5 @@ RewriteRule ^(.*)\.html$ /$1 [R=301,L]
 #forward /hello.html to just /hello
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*\.html\ HTTP/
 RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+#404
+ErrorDocument 404 404.html
