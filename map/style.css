@@ -3,7 +3,7 @@
 	margin: 0;
 }
 body {
-	background-color: #2188C2;
+	background-color: #3D3D43;
 	text-align: center;
 	font-size: 35px;
 	color: #3F3F3F;
@@ -16,4 +16,5 @@ canvas {
 #shade {
 	/*position: absolute; top: 30px; left: auto;*/
 	transform: translateY(-107.5%);
+	opacity: 0.7
 }
