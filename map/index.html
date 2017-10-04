@@ -2,14 +2,86 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Map</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700" rel="stylesheet">
+    <title>cherbmap</title>
     <link rel = "stylesheet" type = "text/css" href = "style.css"/>
   </head>
   <body>
     <div id="container">
-      <canvas id="canvas" width="1000" height="600" style="border:0px solid white;"></canvas>
-      <img src="shade.png" width="1000" height="600" id="shade">
+
+       <div class="controls">
+
+        <div class="controlhold">Width<br>
+        <output id="showWidth">600</output>
+        <input type="range" id="mapWidth" min="0" max="1800" value="600" step="20" class="slider"
+        oninput="showWidth.value=value"></div>
+
+        <div class="controlhold">Height<br>
+        <output id="showHeight">400</output>
+        <input type="range" id="mapHeight" min="0" max="1000" value="400" step="20"class="slider"
+        oninput="showHeight.value=value"></div>
+
+        <div class="controlhold">Tile Size<br>
+        <output id="showTileSize">10</output>
+        <input type="range" id="tileSize" min="1" max="50" value="10" step="1" class="slider"
+        oninput="showTileSize.value=value"></div>
+
+        <div class="controlhold">Resolution<br>
+        <output id="showLayers">20</output>
+        <input type="range" id="layers" min="1" max="100" value="20" step="1" class="slider"
+        oninput="showLayers.value=value"></div>
+
+        <div class="controlhold">Block Size<br>
+        <output id="showMaxTileSize">50</output>
+        <input type="range" id="maxTileSize" min="0" max="400" value="50" class="slider" step="5"
+        oninput="showMaxTileSize.value=value"></div>
+
+      </div>
+      <br>
+      <div id="terraincontrols">
+        <h1>cherbmap</h1>
+        <div id="terrainInner">Terrain<br>
+
+        <output id="showDeepWater"><10</output>
+        <input type="range" id="deepwater" min="0" max="100" value="10" class="slider"
+        oninput="showDeepWater.value='<'+value"><br>
+
+        <output id="showWater"><20</output>
+        <input type="range" id="water" min="0" max="100" value="20" class="slider"
+        oninput="showWater.value='<'+value"><br>
+
+        <output id="showSand"><30</output>
+        <input type="range" id="sand" min="0" max="100" value="30" class="slider"
+        oninput="showSand.value='<'+value"><br>
+
+        <output id="showLand"><40</output>
+        <input type="range" id="land" min="0" max="100" value="40" class="slider"
+        oninput="showLand.value='<'+value"><br>
+
+        <output id="showMountain"><50</output>
+        <input type="range" id="mountain" min="0" max="100" value="50" class="slider"
+        oninput="showMountain.value='<'+value">
+
+        <br><br>Gradient<br>
+        <output id="showGradient"><20%</output>
+        <input type="range" id="gradient" min="0" max="100" value="10" class="slider"
+        oninput="showGradient.value=value+'%'"><br>
+
+         <span id="gradientOptions">
+
+          Light <label><input type="radio" name="gradientType" value="Light"><img src="crosstint.png" class="radioimg"></label><br>
+
+          Dark <label><input type="radio" name="gradientType" value="Dark" checked><img src="crosstint.png" class="radioimg"></label><br>
+
+          None <label><input type="radio" name="gradientType" value="Off"><img src="crosstint.png" class="radioimg"></label>
+
+        </span>
+      </div>
     </div>
+    <canvas id="canvas" width="800" height="450" style="border:0px solid white;"></canvas>
+    <br><a href="http://google.com" id="goButton">!!</a>
     <script src="mapscript.js"></script>
   </body>
 </html>

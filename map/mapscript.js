@@ -1,16 +1,29 @@
 var c=document.getElementById("canvas");
+// black or white background for canvas (to darken or lighten individual tiles with gradient)
+var minAlpha = 0.5 // affects impact of gradient shading on tiles
+var cbg = c.getContext("2d");
+var gradientType = "black" // black or white
+if(gradientType === "black") {
+  cbg.fillStyle = "black"
+} else {
+  cbg.fillStyle = "white"
+}
+cbg.fillRect(0, 0, c.width, c.height);
+// top of controls starts 1/4 down, so middle of controls is centered 1/2 down with map
+//document.getElementById("terraincontrols").style.paddingTop = "20px"
 // use tiles array to store information about tiles, put drawn objects in ctiles (canvas tiles)
 var btiles = []
 var ctiles = []
 // MAP SETTINGS
-var tilesize = 1
-var layercount = 20
-var maxtsize = 100
+// 2-20-100 and 10-20-50 are good, 1-40-200 for mad detail
+var tilesize = 4
+var layercount = 80
+var maxtsize = 200
 // THRESHOLDS
-var deepwater = 0.35
+var deepwater = 0.4
 var water = 0.525
-var sand = 0.55
-var land = 0.68
+var sand = 0.53 // 0.53
+var land = 0.58 // 0.64
 var mountain = 1
 // mapwidth and mapheight in tiles
 var mapcolumns = c.width/tilesize
@@ -69,18 +82,39 @@ for(i=0; i<tilecount; i++) {
   // fill in rest of weight
   btiles[i].strength += Math.random()*baseweight
   // draw tiles
-  ctiles[i]=c.getContext("2d");
+  ctiles=c.getContext("2d");
   if(btiles[i].strength<deepwater) {
-    ctiles[i].fillStyle="#2188C2"
+    ctiles.fillStyle="#1E7EB4"//#2188C2"
+    // percentage position between lower and upper threshold. for deepwater and mountain, use +0.1 or -0.1 instead of 0 and 1
+    btiles[i].relativeStrength = 1-(deepwater-btiles[i].strength)/(deepwater-(1))
   } else if(btiles[i].strength<water) {
-    ctiles[i].fillStyle="#4AABD6"
+    ctiles.fillStyle="#4AABD6"
+    btiles[i].relativeStrength = 1-(water-btiles[i].strength)/(water-deepwater)
   } else if(btiles[i].strength<sand) {
-    ctiles[i].fillStyle="#E5D37D"
+    ctiles.fillStyle="#E5D37D"
+    btiles[i].relativeStrength = 1-(sand-btiles[i].strength)/(sand-water)
   } else if(btiles[i].strength<land) {
-    ctiles[i].fillStyle="#87D652"
+    ctiles.fillStyle="#87D652"
+    btiles[i].relativeStrength = 1-(land-btiles[i].strength)/(land-sand)
   } else if(btiles[i].strength<mountain) {
-    ctiles[i].fillStyle="#E0E0E0"
+    ctiles.fillStyle="#E5E5E5"
+    btiles[i].relativeStrength = 1-((land+0.05)-btiles[i].strength)/((land+0.05)-land)
+    console.log(btiles[i].relativeStrength)
   }
-  // ctiles[i].globalAlpha=(btiles[i].strength)
-  ctiles[i].fillRect(btiles[i].xpos, btiles[i].ypos, tilesize, tilesize);
+  // set alpha - start at minAlpha and then fade in the rest based on relative strength
+  // when lightening instead of darkening, use 1-relativeStrength to lighten higher areas instead of darkening lower ones
+  if(gradientType === "black") {
+    ctiles.globalAlpha= minAlpha + ((btiles[i].relativeStrength)*(1-minAlpha))
+  } else {
+    ctiles.globalAlpha= minAlpha + ((1-btiles[i].relativeStrength)*(1-minAlpha))
+  }
+  ctiles.fillRect(btiles[i].xpos, btiles[i].ypos, tilesize, tilesize);
+}
+// add shade
+shadecontext = canvas.getContext('2d')
+var shadeimg = new Image();
+shadeimg.src = "shade.png";
+shadeimg.onload = function() {
+     shadecontext.globalAlpha = 0.5
+     //shadecontext.drawImage(shadeimg, 0, 0, 1000, 600);
 }

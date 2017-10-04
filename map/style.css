@@ -4,17 +4,112 @@
 }
 body {
 	background-color: #3D3D43;
+	/*background-image: url("quaint.png");*/
 	text-align: center;
-	font-size: 35px;
-	color: #3F3F3F;
-	font-family: Trebuchet MS, sans-serif;
+	font-size: 25px;
+	color: white;
+	font-family: 'Josefin Sans', 'Trebuchet MS', sans-serif;
 	line-height: 1.5;
 }
-canvas {
-  margin: 30px auto;
+#container {
+	float: left;
 }
-#shade {
-	/*position: absolute; top: 30px; left: auto;*/
-	transform: translateY(-107.5%);
-	opacity: 0.7
+body {
+	width: 2500px; /*means it scrolls instead of pushing to new line*/
+}
+canvas {
+	padding: 10px;
+	display: inline;
+	overflow: auto;
+}
+h1 {
+	display: inline-block;
+	margin: auto auto;
+	float: left;
+	padding-top: 200px;
+	font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
+}
+div {
+	display: inline-block;
+}
+#goButton {
+text-decoration: none;
+font-size: 45px;
+font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
+color: white;
+}
+.controlhold {
+	padding: 0px 15px;
+}
+.controls {
+	margin: 10px auto;
+	padding-left: 400px;
+	padding-bottom: 0px;
+}
+#terraincontrols {
+	float: left;
+	margin-top: 0px; /*half map height*/
+	padding: 10px;
+	padding-bottom: 80px;
+}
+#terrainInner {
+	padding: 0px 20px;
+}
+#gradientOptions {
+	font-size: 17px;
+}
+label > input{ /* hide radio button */
+  visibility: hidden;
+  position: absolute; /* remove button from document flow */
+}
+/*label > input + img{
+  cursor:pointer; adds "button" cursor to image
+}*/
+.radioimg {
+	/*when not selected, image is 0*0 but with padding so background image shows
+	when selected, image has width and height but no padding, so image shows but no background image*/
+	width:0px;
+	height:0px;
+	padding: 9px;
+	background-color: white;
+	/*background: url(tile2.jpg);*/
+}
+label > input:checked + img{ /* radio checked image */
+	width:18px;
+	height:18px;
+	padding: 0px;
+}
+.slider {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 90px;
+	height: 10px;
+	background: white;
+}
+output {
+	font-size: 17px;
+}
+input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 0%;
+}
+#deepwater::-webkit-slider-thumb {
+	background: #2188C2;
+}
+#water::-webkit-slider-thumb {
+	background: #4AABD6;
+}
+#sand::-webkit-slider-thumb {
+	background: #E5D37D;
+}
+#land::-webkit-slider-thumb {
+	background: #87D652;
+}
+#mountain::-webkit-slider-thumb {
+	background: #E0E0E0;
+}
+input[type=range]:focus {
+  outline: none; /* Removes the blue border.*/
 }
