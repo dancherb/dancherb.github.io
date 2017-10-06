@@ -44,24 +44,24 @@
         <h1>cherbmap</h1>
         <div id="terrainInner">Terrain<br>
 
-        <output id="showDeepWater"><10</output>
-        <input type="range" id="deepwater" min="0" max="100" value="10" class="slider"
+        <output id="showDeepWater"><40</output>
+        <input type="range" id="deepwater" min="0" max="100" value="40" class="slider"
         oninput="showDeepWater.value='<'+value"><br>
 
-        <output id="showWater"><20</output>
-        <input type="range" id="water" min="0" max="100" value="20" class="slider"
+        <output id="showWater"><52</output>
+        <input type="range" id="water" min="0" max="100" value="52" class="slider"
         oninput="showWater.value='<'+value"><br>
 
-        <output id="showSand"><30</output>
-        <input type="range" id="sand" min="0" max="100" value="30" class="slider"
+        <output id="showSand"><54</output>
+        <input type="range" id="sand" min="0" max="100" value="54" class="slider"
         oninput="showSand.value='<'+value"><br>
 
-        <output id="showLand"><40</output>
-        <input type="range" id="land" min="0" max="100" value="40" class="slider"
+        <output id="showLand"><58</output>
+        <input type="range" id="land" min="0" max="100" value="58" class="slider"
         oninput="showLand.value='<'+value"><br>
 
-        <output id="showMountain"><50</output>
-        <input type="range" id="mountain" min="0" max="100" value="50" class="slider"
+        <output id="showMountain"><100</output>
+        <input type="range" id="mountain" min="0" max="100" value="100" class="slider"
         oninput="showMountain.value='<'+value">
 
         <br><br>Gradient<br>
@@ -71,17 +71,17 @@
 
          <span id="gradientOptions">
 
-          Light <label><input type="radio" name="gradientType" value="Light"><img src="crosstint.png" class="radioimg"></label><br>
+          Light <label><input id="gradientType1" type="radio" name="gradientType" value="Light"><img src="crosstint.png" class="radioimg"></label><br>
 
-          Dark <label><input type="radio" name="gradientType" value="Dark" checked><img src="crosstint.png" class="radioimg"></label><br>
+          Dark <label><input id="gradientType2" type="radio" name="gradientType" value="Dark" checked><img src="crosstint.png" class="radioimg"></label><br>
 
-          None <label><input type="radio" name="gradientType" value="Off"><img src="crosstint.png" class="radioimg"></label>
+          None <label><input id="gradientType3" type="radio" name="gradientType" value="Off"><img src="crosstint.png" class="radioimg"></label>
 
         </span>
       </div>
     </div>
     <canvas id="canvas" width="800" height="450" style="border:0px solid white;"></canvas>
-    <br><a href="http://google.com" id="goButton">!!</a>
+    <br><a href="#" onclick="gogogo()" id="goButton">!!</a>
     <script src="mapscript.js"></script>
   </body>
 </html>
