@@ -84,6 +84,7 @@ label > input:checked + img{ /* radio checked image */
   width: 90px;
 	height: 10px;
 	background: white;
+	display: block;
 }
 output {
 	font-size: 17px;
