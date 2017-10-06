@@ -8,8 +8,6 @@
 // land
 // mountain
 var c=document.getElementById("canvas");
-// black or white background for canvas (to darken or lighten individual tiles with gradient)
-var minAlpha = 0.5 // affects impact of gradient shading on tiles
 var cbg = c.getContext("2d");
 var firstTime = true;
 function gogogo() { // main button
@@ -34,6 +32,7 @@ function gogogo() { // main button
   var sand = Number(document.getElementById('sand').value)/100
   var land = Number(document.getElementById('land').value)/100
   var mountain = Number(document.getElementById('mountain').value)/100
+  var minAlpha = Number(document.getElementById('gradient').value)/100 // affects impact of gradient shading on tiles
   // mapwidth and mapheight in tiles
   var mapcolumns = Math.ceil(c.width/tilesize)
   var maprows = Math.ceil(c.height/tilesize)
