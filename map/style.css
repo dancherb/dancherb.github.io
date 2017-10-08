@@ -40,6 +40,7 @@ color: white;
 }
 .controlhold {
 	padding: 0px 15px;
+	display: inline-block;
 }
 .controls {
 	margin: 10px auto;
@@ -88,6 +89,7 @@ label > input:checked + img{ /* radio checked image */
 }
 output {
 	font-size: 17px;
+	display: block;
 }
 input[type=range]::-webkit-slider-thumb {
 	-webkit-appearance: none;
