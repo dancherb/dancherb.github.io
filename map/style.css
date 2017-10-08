@@ -41,12 +41,15 @@ a:hover {
 	color: #AFAFAF;
 }
 #goHolder {
- /*height:*/
+ display: inline-block;
+ line-height: 480px;
+ vertical-align: top;
 }
 #goButton {
 text-decoration: none;
 font-size: 45px;
 font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
+display: inline-block;
 }
 .controlhold {
 	padding: 0px 15px;

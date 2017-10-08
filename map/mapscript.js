@@ -30,7 +30,6 @@ function gogogo(refreshAll) { // main button
     cbg.fillStyle = "white"
   }
   cbg.fillRect(0, 0, c.width, c.height);
-  document.getElementById('goHolder').style.height=1000 // make !! button holder equal height
   if(refreshAll === true) {
     // use tiles array to store information about tiles, put drawn objects in ctiles (canvas tiles)
     btiles = [] // clears/creates array
@@ -42,6 +41,7 @@ function gogogo(refreshAll) { // main button
     tilesize = Number(document.getElementById('tileSize').value)
     layercount = Number(document.getElementById('layers').value)
     maxtsize = Number(document.getElementById('maxTileSize').value)
+    document.getElementById('goHolder').style.lineHeight = (c.height+40)+"px" // position "go" button in middle 
     // mapwidth and mapheight in tiles
     mapcolumns = Math.ceil(c.width/tilesize)
     maprows = Math.ceil(c.height/tilesize)
