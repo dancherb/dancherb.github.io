@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700" rel="stylesheet">
     <title>cherbmap</title>
     <link rel = "stylesheet" type = "text/css" href = "style.css"/>
+    <link rel="shortcut icon" href="favicon.ico">
   </head>
   <body>
     <div id="container">
@@ -14,60 +15,60 @@
        <div class="controls">
 
         <div class="controlhold">Width<br>
-        <output id="showWidth">600</output>
-        <input type="range" id="mapWidth" min="0" max="1800" value="600" step="20" class="slider"
+        <output id="showWidth">820</output>
+        <input type="range" id="mapWidth" min="0" max="1800" value="820" step="20" class="slider"
         oninput="showWidth.value=value"></div>
 
         <div class="controlhold">Height<br>
-        <output id="showHeight">400</output>
-        <input type="range" id="mapHeight" min="0" max="1000" value="400" step="20"class="slider"
+        <output id="showHeight">480</output>
+        <input type="range" id="mapHeight" min="0" max="1000" value="480" step="20"class="slider"
         oninput="showHeight.value=value"></div>
 
         <div class="controlhold">Tile Size<br>
-        <output id="showTileSize">10</output>
-        <input type="range" id="tileSize" min="1" max="50" value="10" step="1" class="slider"
+        <output id="showTileSize">4</output>
+        <input type="range" id="tileSize" min="1" max="50" value="4" step="1" class="slider"
         oninput="showTileSize.value=value"></div>
 
         <div class="controlhold">Resolution<br>
-        <output id="showLayers">20</output>
-        <input type="range" id="layers" min="1" max="100" value="20" step="1" class="slider"
+        <output id="showLayers">50</output>
+        <input type="range" id="layers" min="1" max="100" value="50" step="1" class="slider"
         oninput="showLayers.value=value"></div>
 
         <div class="controlhold">Block Size<br>
-        <output id="showMaxTileSize">50</output>
-        <input type="range" id="maxTileSize" min="0" max="400" value="50" class="slider" step="5"
+        <output id="showMaxTileSize">60</output>
+        <input type="range" id="maxTileSize" min="0" max="400" value="60" class="slider" step="5"
         oninput="showMaxTileSize.value=value"></div>
 
       </div>
       <br>
       <div id="terraincontrols">
-        <h1>cherbmap</h1>
+        <h1><a href="http://cherb.co.uk">cherb</a><a href="index.html">map</a></h1>
         <div id="terrainInner">Terrain<br>
 
-        <output id="showDeepWater"><40</output>
-        <input type="range" id="deepwater" min="0" max="100" value="40" class="slider"
-        oninput="showDeepWater.value='<'+value" onchange="gogogo(false)"><br>
+        <output id="showDeepWater"><41</output>
+        <input type="range" id="deepwater" min="0" max="100" value="41" class="slider"
+        oninput="showDeepWater.value='<'+value" onchange="gogogo(false)">
 
-        <output id="showWater"><52</output>
-        <input type="range" id="water" min="0" max="100" value="52" class="slider"
-        oninput="showWater.value='<'+value" onchange="gogogo(false)"><br>
+        <output id="showWater"><50</output>
+        <input type="range" id="water" min="0" max="100" value="50" class="slider"
+        oninput="showWater.value='<'+value" onchange="gogogo(false)">
 
-        <output id="showSand"><54</output>
-        <input type="range" id="sand" min="0" max="100" value="54" class="slider"
-        oninput="showSand.value='<'+value" onchange="gogogo(false)"><br>
+        <output id="showSand"><52</output>
+        <input type="range" id="sand" min="0" max="100" value="52" class="slider"
+        oninput="showSand.value='<'+value" onchange="gogogo(false)">
 
-        <output id="showLand"><58</output>
-        <input type="range" id="land" min="0" max="100" value="58" class="slider"
-        oninput="showLand.value='<'+value" onchange="gogogo(false)"><br>
+        <output id="showLand"><59</output>
+        <input type="range" id="land" min="0" max="100" value="59" class="slider"
+        oninput="showLand.value='<'+value" onchange="gogogo(false)">
 
         <output id="showMountain"><100</output>
         <input type="range" id="mountain" min="0" max="100" value="100" class="slider"
         oninput="showMountain.value='<'+value" onchange="gogogo(false)">
 
-        <br><br>Gradient<br>
+        <hr style="height:8px; visibility:hidden;">Gradient<br>
         <output id="showGradient"><40%</output>
         <input type="range" id="gradient" min="0" max="100" value="40" class="slider"
-        oninput="showGradient.value=value+'%'" onchange="gogogo(false)"><br>
+        oninput="showGradient.value=value+'%'" onchange="gogogo(false)">
 
          <span id="gradientOptions">
 
@@ -80,8 +81,8 @@
         </span>
       </div>
     </div>
-    <canvas id="canvas" width="800" height="450" style="border:0px solid white;"></canvas>
-    <br><a href="#" onclick="gogogo(true)" id="goButton">!!</a>
+    <canvas id="canvas" width="820" height="480" style="border:0px solid white;"></canvas>
+    <div id="goHolder"><a href="#" onclick="gogogo(true)" id="goButton">!!</a></div>
     <script src="mapscript.js"></script>
   </body>
 </html>

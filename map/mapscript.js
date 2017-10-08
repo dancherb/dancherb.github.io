@@ -29,7 +29,8 @@ function gogogo(refreshAll) { // main button
   } else {
     cbg.fillStyle = "white"
   }
-  cbg.fillRect(0, 0, c.width, c.height+100);
+  cbg.fillRect(0, 0, c.width, c.height);
+  document.getElementById('goHolder').style.height=1000 // make !! button holder equal height
   if(refreshAll === true) {
     // use tiles array to store information about tiles, put drawn objects in ctiles (canvas tiles)
     btiles = [] // clears/creates array
@@ -99,7 +100,6 @@ function gogogo(refreshAll) { // main button
       // fill in rest of weight
       btiles[i].strength += Math.random()*baseweight
     }
-    console.log(refreshAll)
     // do this when it's not a full refresh (AND when it is), i.e. when changing threshold sliders
     // draw tiles
     // THRESHOLDS 0.4 / 0.525 / 0.53 / 0.58 / 1

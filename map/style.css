@@ -28,15 +28,25 @@ h1 {
 	float: left;
 	padding-top: 200px;
 	font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
+	/*text-shadow: 3px 0px 1px white;*/
 }
 div {
 	display: inline-block;
+}
+a {
+	text-decoration: none;
+	color: white;
+}
+a:hover {
+	color: #AFAFAF;
+}
+#goHolder {
+ /*height:*/
 }
 #goButton {
 text-decoration: none;
 font-size: 45px;
 font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
-color: white;
 }
 .controlhold {
 	padding: 0px 15px;
@@ -44,14 +54,14 @@ color: white;
 }
 .controls {
 	margin: 10px auto;
-	padding-left: 400px;
+	padding-left: 350px;
 	padding-bottom: 0px;
 }
 #terraincontrols {
 	float: left;
 	margin-top: 0px; /*half map height*/
 	padding: 10px;
-	padding-bottom: 80px;
+	padding-bottom: 0px;
 }
 #terrainInner {
 	padding: 0px 20px;
@@ -75,10 +85,15 @@ label > input{ /* hide radio button */
 	background-color: white;
 	/*background: url(tile2.jpg);*/
 }
-label > input:checked + img{ /* radio checked image */
-	width:18px;
-	height:18px;
-	padding: 0px;
+.radioimg:hover{
+	width:12px;
+	height:12px;
+	padding: 3px;
+}
+input:checked + img{ /* radio checked image */
+	width:18px !important;
+	height:18px !important;
+	padding: 0px !important;
 }
 .slider {
   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
@@ -86,6 +101,9 @@ label > input:checked + img{ /* radio checked image */
 	height: 10px;
 	background: white;
 	display: block;
+	margin: auto;
+	margin-top: 5px;
+	margin-bottom: 10px;
 }
 output {
 	font-size: 17px;
@@ -97,6 +115,9 @@ input[type=range]::-webkit-slider-thumb {
   height: 20px;
   background: white;
   border-radius: 0%;
+}
+input[type=range]::-webkit-slider-thumb:hover {
+	background: #AFAFAF;
 }
 #deepwater::-webkit-slider-thumb {
 	background: #2188C2;
@@ -112,6 +133,9 @@ input[type=range]::-webkit-slider-thumb {
 }
 #mountain::-webkit-slider-thumb {
 	background: #E0E0E0;
+}
+::-webkit-slider-thumb:hover {
+	filter: brightness(80%);
 }
 input[type=range]:focus {
   outline: none; /* Removes the blue border.*/
