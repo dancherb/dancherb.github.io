@@ -1,12 +1,24 @@
-// mapHeight;
-// tileSize;
-// layers;
-// maxTileSize
-// deepwater
-// water
-// sand
-// land
-// mountain
+// about button and text
+aboutText.style.opacity = 0;
+// var aboutDesc = document.getElementById("aboutText").innerHTML
+// document.getElementById("aboutText").innerHTML = ""
+function openAbout() {
+  if(aboutText.style.opacity === "0") {
+    aboutText.style.opacity = 1;
+    aboutText.style.paddingLeft = "10px";
+    aboutText.style.paddingTop = "10px";
+    // document.getElementById("aboutText").innerHTML = aboutDesc
+  } else {
+    aboutText.style.opacity = 0;
+    aboutText.style.paddingLeft = "0px";
+    aboutText.style.paddingTop = "0px";
+    // document.getElementById("aboutText").innerHTML = ""
+  }
+  aboutText.style.transition = "all 0.2s ease";
+  envelopeIcon.classList.toggle("fa-envelope-open-o");
+  envelopeIcon.classList.toggle("fa-envelope-o");
+}
+// map
 var c=document.getElementById("canvas");
 var cbg = c.getContext("2d");
 var firstTime = true;
@@ -17,19 +29,6 @@ function gogogo(refreshAll) { // main button
   } else {
     cbg.clearRect(0, 0, c.width, c.height); // if it's already been loaded once before, clear all
   }
-  if(document.getElementById('gradientType1').checked) {
-    var gradientType = "Light"
-  } else if(document.getElementById('gradientType2').checked) {
-    var gradientType = "Dark"
-  } else {
-    var gradientType = "Off"
-  }
-  if(gradientType === "Dark") {
-    cbg.fillStyle = "black"
-  } else {
-    cbg.fillStyle = "white"
-  }
-  cbg.fillRect(0, 0, c.width, c.height);
   if(refreshAll === true) {
     // use tiles array to store information about tiles, put drawn objects in ctiles (canvas tiles)
     btiles = [] // clears/creates array
@@ -41,11 +40,14 @@ function gogogo(refreshAll) { // main button
     tilesize = Number(document.getElementById('tileSize').value)
     layercount = Number(document.getElementById('layers').value)
     maxtsize = Number(document.getElementById('maxTileSize').value)
-    document.getElementById('goHolder').style.lineHeight = (c.height+40)+"px" // position "go" button in middle 
+    document.getElementById('goHolder').style.lineHeight = (c.height+40)+"px" // position "go" button in middle
+    document.getElementById('bgleft').style.height = (c.height+180)+"px" // adjust sidebar height with map height
+    // document.getElementById('bgleft').style.minHeight = 100+"%" // adjust sidebar height with map height
+    document.getElementById('container').style.width = (c.width+450)+"px" // adjust page width with map width
     // mapwidth and mapheight in tiles
     mapcolumns = Math.ceil(c.width/tilesize)
     maprows = Math.ceil(c.height/tilesize)
-    tilecount =  mapcolumns*maprows
+    tilecount = mapcolumns*maprows
     baseweight = 0 // existing weightings will be added to this, then at the end 1-baseweight to fill remaining weight
     layers = {}
     layertiles = []
@@ -72,6 +74,20 @@ function gogogo(refreshAll) { // main button
     }
     baseweight = 1-baseweight // base weight fills gap;
   }
+  if(document.getElementById('gradientType1').checked) {
+    var gradientType = "Light"
+  } else if(document.getElementById('gradientType2').checked) {
+    var gradientType = "Dark"
+  } else {
+    var gradientType = "Off"
+  }
+  if(gradientType === "Dark") {
+    cbg.fillStyle = "black"
+  } else {
+    cbg.fillStyle = "white"
+  }
+  cbg.globalAlpha = 1
+  cbg.fillRect(0, 0, c.width, c.height);
   // base layer tiles
   for(i=0; i<tilecount; i++) {
     if(refreshAll === true) {

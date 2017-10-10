@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <script src="https://use.fontawesome.com/a20244987a.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700" rel="stylesheet">
@@ -11,10 +12,25 @@
   </head>
   <body>
     <div id="container">
+      <div id="bgleft">
+          <div id="title">
+            <h1><a class="titlelink" href="http://cherb.co.uk">cherb</a><a class="titlelink" href="index.html">map</a></h1>
+          <br>
+          <div id="about">
+            <a id="aboutButton" href="#" onclick="openAbout()"><i id="envelopeIcon" class="fa fa-envelope-o aboutIcon" aria-hidden="true"></i></a>
+            <div id="aboutText">A random landscape generator that uses multiple layers of noise
+            (the number of layers marked by the <em>resolution</em>) of increasing grain sizes, melding them together
+            to create a map. Grain size is indicated by <em>block size</em> - which controls the range, or largest grain
+            size - and tends to affect the general size of land masses. Each base tile (<em>tile size</em>) absorbs proportionally
+            the intensity of its parent tile for each noise layer, and is allocated a terrain type based on the terrain thresholds.
+            Gradient effects further indicate the ultimate intensity (think of it as height) of each base tile.
+            </div>
+          </div>
+      </div>
+    </div>
 
-       <div class="controls">
-
-        <div class="controlhold">Width<br>
+      <div class="controls">
+       <div class="controlhold">Width<br>
         <output id="showWidth">820</output>
         <input type="range" id="mapWidth" min="0" max="1800" value="820" step="20" class="slider"
         oninput="showWidth.value=value"></div>
@@ -42,7 +58,6 @@
       </div>
       <br>
       <div id="terraincontrols">
-        <h1><a href="http://cherb.co.uk">cherb</a><a href="index.html">map</a></h1>
         <div id="terrainInner">Terrain<br>
 
         <output id="showDeepWater"><41</output>
@@ -64,7 +79,6 @@
         <output id="showMountain"><100</output>
         <input type="range" id="mountain" min="0" max="100" value="100" class="slider"
         oninput="showMountain.value='<'+value" onchange="gogogo(false)">
-
         <hr style="height:8px; visibility:hidden;">Gradient<br>
         <output id="showGradient"><40%</output>
         <input type="range" id="gradient" min="0" max="100" value="40" class="slider"

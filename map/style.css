@@ -4,40 +4,101 @@
 }
 body {
 	background-color: #3D3D43;
-	/*background-image: url("quaint.png");*/
+	/*#F3F3F3;*/
 	text-align: center;
 	font-size: 25px;
 	color: white;
 	font-family: 'Josefin Sans', 'Trebuchet MS', sans-serif;
 	line-height: 1.5;
 }
+body:hover {
+	/*prevent selection cursor when rolling over*/
+	cursor: default;
+}
+::-moz-selection {
+	background: #AFAFAF;
+}
+::selection {
+	background: #AFAFAF;
+}
+#bgleft {
+	background-color: #F3F3F3;
+	float:left;
+	padding-left:10px;
+	top: 0;
+  left: 0;
+  width: 210px;
+	min-height: 100vh; /*makes sure it always fills at least browser height*/
+  height: 100%; /*adjust height of this with height of map*/
+	z-index: 0;
+	/*display: block;*/
+}
+#title {
+	position: absolute;
+ 	top: 65%;
+	left: 10px;
+ 	transform: translateY(-50%);
+}
+/*#about {
+	position: absolute;
+ 	top: 75%;
+	left: 20px;
+ 	transform: translateY(-50%);
+}*/
+#aboutText {
+	color:#171717;
+	float: right;
+	padding-left: 0px;
+	/*padding-top: 8px;*/
+	font-size: 10px;
+	text-align: left;
+	color: black;
+	width: 160px;
+	opacity: 0;
+	/*transition: opacity 0.5s;
+	transition: padding-left 0.5s;*/
+}
+.aboutIcon {
+	color:#171717;
+}
+.aboutIcon:hover {
+	color: #AFAFAF;
+}
+#aboutButton {
+}
+i {
+	color: black;
+}
 #container {
 	float: left;
-}
-body {
-	width: 2500px; /*means it scrolls instead of pushing to new line*/
+	width: 2800px;
+	min-width: 1100px;
 }
 canvas {
 	padding: 10px;
-	display: inline;
+	display: inline-block;
 	overflow: auto;
 }
 h1 {
 	display: inline-block;
-	margin: auto auto;
+	/*margin: auto auto;*/
 	float: left;
-	padding-top: 200px;
+	/*padding-top: 200px;*/
 	font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
-	/*text-shadow: 3px 0px 1px white;*/
+	/*text-shadow: 2px 2px 1px black;*/
+}
+a {
+	cursor: default;
 }
 div {
 	display: inline-block;
 }
-a {
+.titlelink {
 	text-decoration: none;
-	color: white;
+	color: #171717;
+	/*line-height: 100vh;*/
 }
-a:hover {
+.titlelink:hover {
 	color: #AFAFAF;
 }
 #goHolder {
@@ -47,9 +108,14 @@ a:hover {
 }
 #goButton {
 text-decoration: none;
+color: white;
 font-size: 45px;
 font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
 display: inline-block;
+padding-right: 20px;
+}
+#goButton:hover {
+	color: #AFAFAF;
 }
 .controlhold {
 	padding: 0px 15px;
@@ -57,7 +123,7 @@ display: inline-block;
 }
 .controls {
 	margin: 10px auto;
-	padding-left: 350px;
+	padding-left: 100px;
 	padding-bottom: 0px;
 }
 #terraincontrols {
@@ -65,6 +131,7 @@ display: inline-block;
 	margin-top: 0px; /*half map height*/
 	padding: 10px;
 	padding-bottom: 0px;
+	padding-right: 0px;
 }
 #terrainInner {
 	padding: 0px 20px;
