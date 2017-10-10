@@ -1,7 +1,5 @@
 // about button and text
 aboutText.style.opacity = 0;
-// var aboutDesc = document.getElementById("aboutText").innerHTML
-// document.getElementById("aboutText").innerHTML = ""
 function openAbout() {
   if(aboutText.style.opacity === "0") {
     aboutText.style.opacity = 1;
@@ -159,8 +157,9 @@ function gogogo(refreshAll) { // main button
   var shadeimg = new Image();
   shadeimg.src = "shade.png";
   shadeimg.onload = function() {
-       shadecontext.globalAlpha = 0.5
-       //shadecontext.drawImage(shadeimg, 0, 0, 1000, 600);
+       console.log("load shade")
+       shadecontext.globalAlpha = 0.2
+       shadecontext.drawImage(shadeimg, 0, 0, c.width, c.height);
   }
 }
 gogogo(true)

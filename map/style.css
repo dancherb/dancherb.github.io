@@ -4,7 +4,6 @@
 }
 body {
 	background-color: #3D3D43;
-	/*#F3F3F3;*/
 	text-align: center;
 	font-size: 25px;
 	color: white;
@@ -31,7 +30,6 @@ body:hover {
 	min-height: 100vh; /*makes sure it always fills at least browser height*/
   height: 100%; /*adjust height of this with height of map*/
 	z-index: 0;
-	/*display: block;*/
 }
 #title {
 	position: absolute;
@@ -39,32 +37,21 @@ body:hover {
 	left: 10px;
  	transform: translateY(-50%);
 }
-/*#about {
-	position: absolute;
- 	top: 75%;
-	left: 20px;
- 	transform: translateY(-50%);
-}*/
 #aboutText {
 	color:#171717;
 	float: right;
 	padding-left: 0px;
-	/*padding-top: 8px;*/
 	font-size: 10px;
 	text-align: left;
 	color: black;
 	width: 160px;
 	opacity: 0;
-	/*transition: opacity 0.5s;
-	transition: padding-left 0.5s;*/
 }
 .aboutIcon {
 	color:#171717;
 }
 .aboutIcon:hover {
 	color: #AFAFAF;
-}
-#aboutButton {
 }
 i {
 	color: black;
@@ -81,25 +68,32 @@ canvas {
 }
 h1 {
 	display: inline-block;
-	/*margin: auto auto;*/
 	float: left;
-	/*padding-top: 200px;*/
 	font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
-	/*text-shadow: 2px 2px 1px black;*/
+	position: relative;
+}
+#cherb1, #map1 {
+	text-decoration: none;
+	height: 60%;
+  position: absolute;
+  color: #383838;
+  overflow: hidden;
+}
+#cherb2, #map2 {
+	text-decoration: none;
+	color: #171717;
+}
+#cherbtext:hover > a {
+	color:#AFAFAF;
+}
+#maptext:hover > a {
+	color:#AFAFAF;
 }
 a {
 	cursor: default;
 }
 div {
 	display: inline-block;
-}
-.titlelink {
-	text-decoration: none;
-	color: #171717;
-	/*line-height: 100vh;*/
-}
-.titlelink:hover {
-	color: #AFAFAF;
 }
 #goHolder {
  display: inline-block;
@@ -143,9 +137,6 @@ label > input{ /* hide radio button */
   visibility: hidden;
   position: absolute; /* remove button from document flow */
 }
-/*label > input + img{
-  cursor:pointer; adds "button" cursor to image
-}*/
 .radioimg {
 	/*when not selected, image is 0*0 but with padding so background image shows
 	when selected, image has width and height but no padding, so image shows but no background image*/
