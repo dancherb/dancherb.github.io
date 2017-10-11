@@ -71,6 +71,7 @@ h1 {
 	float: left;
 	font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
 	position: relative;
+	font-size: 46px;
 }
 #cherb1, #map1 {
 	text-decoration: none;

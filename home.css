@@ -1,0 +1,129 @@
+/*general*/
+* { /*CSS reset*/
+	padding: 0;
+	margin: 0;
+}
+html {
+  height: 100%;
+}
+body {
+	background-color: #E0E0E0;
+	text-align: center;
+	font-size: 45px;
+	color: #171717;
+	font-family: 'Josefin Sans', 'Trebuchet MS', sans-serif;
+}
+body:hover {
+	/*prevent selection cursor when rolling over*/
+	cursor: default;
+}
+::-moz-selection {
+	background: #AFAFAF;
+}
+::selection {
+	background: #AFAFAF;
+}
+h1, h4, h5 {
+	font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
+	position: relative;
+}
+/*projects button*/
+.projectsIcon {
+	color:#171717;
+}
+.projectsIcon:hover {
+	color: #AFAFAF;
+}
+i {
+	color:#171717;
+}
+.fa-envelope-o, .fa-envelope-open-o {
+  font-size: 40px;
+}
+/*title cherb text*/
+#container {
+  width: 100%;
+}
+#title {
+  /*position: absolute;*/
+  top:50%;
+  left:50%;
+  /*padding:15px;*/
+  /*-ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);*/
+  line-height: 1;
+}
+#cherb1 {
+	text-decoration: none;
+	height: 60%;
+  position: absolute;
+  color: #383838;
+  overflow: hidden;
+}
+#cherb2 {
+	text-decoration: none;
+	color: #171717;
+}
+#cherbtext:hover > a {
+	color:#AFAFAF;
+}
+a {
+	cursor: default;
+}
+/*projects text*/
+h4, h5 {
+  display:inline-block;
+  /*text-shadow: 1px 1px 1px white; */
+}
+h5 {
+  opacity: 0;
+}
+span {
+  font-size: 15px;
+  display: inline-block;
+  /*width: 100px;*/
+  transform: translateY(-150%);
+  opacity: 0;
+}
+.fa-minus-circle {
+  font-size: 20px;
+}
+#projectsText {
+  padding-bottom: 50px;
+}
+.project {
+  /*position: absolute;*/
+  padding-bottom: 20px;
+  width: 100%;
+}
+img {
+  padding-right, padding-left: 50px;
+}
+.project > h5, .project > img, .project > span {
+  transition: all 0.3s ease-out;
+}
+.project:hover > span {
+  /*transform-origin: 0% 1600%;*/
+  transform: translate(0%, -500%) rotate(-15deg);
+}
+.project:hover > h5, .project:hover > img {
+  transition: all 0.3s ease-in;
+  /* Safari */
+-webkit-transform: rotate(-15deg);
+/* Firefox */
+-moz-transform: rotate(-15deg);
+/* IE */
+-ms-transform: rotate(-15deg);
+/* Opera */
+-o-transform: rotate(-15deg);
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0.5);
+}
+.project:hover > h5, .project:hover > span {
+  opacity: 1;
+  transition: all 0.3s ease-in;
+}
+#bottom {
+  font-size: 12px;
+}
