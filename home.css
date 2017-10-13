@@ -1,4 +1,4 @@
-/*general*/
+/*GENERAL*/
 * { /*CSS reset*/
 	padding: 0;
 	margin: 0;
@@ -9,9 +9,16 @@ html {
 body {
 	background-color: #E0E0E0;
 	text-align: center;
-	font-size: 45px;
+	font-size: 40px;
 	color: #171717;
 	font-family: 'Josefin Sans', 'Trebuchet MS', sans-serif;
+}
+div {
+	display: inline-block;
+}
+#projectsContain {
+	padding-top: 25px;
+	/*position: relative;*/
 }
 body:hover {
 	/*prevent selection cursor when rolling over*/
@@ -23,107 +30,146 @@ body:hover {
 ::selection {
 	background: #AFAFAF;
 }
+#container {
+	padding-top: 240px;
+	/*balances out the empty element beneath so that the text is centered - this padding is faded out once it opens*/
+  width: 500px;
+	/*height: 100%;*/
+	/*margin: auto auto;*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+a {
+	cursor: default;
+	text-decoration: none;
+}
 h1, h4, h5 {
 	font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
+	color: #171717;
+	/*display: inline-block;*/
+	/*position: relative;*/
+}
+h4 {
+	display: inline;
+}
+/*TITLE CHERB TEXT*/
+#cherbtext {
 	position: relative;
 }
-/*projects button*/
-.projectsIcon {
-	color:#171717;
-}
-.projectsIcon:hover {
-	color: #AFAFAF;
-}
-i {
-	color:#171717;
-}
-.fa-envelope-o, .fa-envelope-open-o {
-  font-size: 40px;
-}
-/*title cherb text*/
-#container {
-  width: 100%;
-}
-#title {
-  /*position: absolute;*/
-  top:50%;
-  left:50%;
-  /*padding:15px;*/
-  /*-ms-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);*/
-  line-height: 1;
-}
 #cherb1 {
-	text-decoration: none;
 	height: 60%;
   position: absolute;
   color: #383838;
   overflow: hidden;
 }
 #cherb2 {
-	text-decoration: none;
 	color: #171717;
 }
-#cherbtext:hover > a {
-	color:#AFAFAF;
+
+/*PROJECTS BUTTON*/
+
+i {
+	color:#171717;
 }
-a {
-	cursor: default;
+.fa-envelope-o, .fa-envelope-open-o {
+  font-size: 35px;
 }
-/*projects text*/
-h4, h5 {
-  display:inline-block;
-  /*text-shadow: 1px 1px 1px white; */
+.fa-paper-plane-o {
+  font-size: 30px;
 }
-h5 {
+.fa-envelope-o:hover, .fa-envelope-open-o:hover, .fa-paper-plane-o:hover {
+	color: #AFAFAF;
+}
+
+/*PROJECTS TEXT (h4)*/
+#projectsText {
+  padding-bottom: 30px;
+}
+
+/*PROJECTS LIST*/
+.projectC, .projectO {
+	width: 500px;
+	padding-bottom: 20px;
+}
+/*try and center h5 and span in middle of line, with image */
+.projectC h5, .projectC span, .projectO h5, .projectO span {
+	/*display: inline;*/
+	/*width: 100%;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);*/
+}
+
+/*properties of title, image, text when open vs closed*/
+.projectC h5 {
+	font-size: 0px;
+	opacity: 0;
+	display: inline;
+}
+.projectO h5 {
+	font-size: 0px;
+	/*30px*/
+	/*display:inline-block;*/
+  opacity: 1;
+	display: inline;
+}
+.projectC span {
+	font-size: 0;
+	display: inline;
+	opacity: 0;
+}
+.projectO span {
+	font-size: 0px;
+	/*15px*/
+  display: inline;
   opacity: 0;
 }
-span {
-  font-size: 15px;
-  display: inline-block;
-  /*width: 100px;*/
-  transform: translateY(-150%);
-  opacity: 0;
+.projectC img {
+	width: 0px;
+	display: inline;
 }
-.fa-minus-circle {
+.projectO img {
+	width: 70px;
+	display: inline;
+	vertical-align:middle;
+	/*float:left;*/
+	/*text-align: center;*/
+}
+.projectC .fa {
+  font-size: 0px;
+}
+.projectO .fa {
   font-size: 20px;
 }
-#projectsText {
-  padding-bottom: 50px;
+
+/*enable transitions on h5, img and span*/
+.projectC h5, .projectC img, .projectC span, .projectC fa {
+  transition: all 0.3s ease;
 }
-.project {
-  /*position: absolute;*/
-  padding-bottom: 20px;
-  width: 100%;
+.projectO h5, .projectO img, .projectO span, .projectO fa {
+  transition: all 0.3s ease;
 }
-img {
-  padding-right, padding-left: 50px;
+
+/*set default rotation to -15*/
+.projectO h5, .projectC h5, .projectO img {
+	transform: rotate(-105deg);
+	opacity: 0.5;
 }
-.project > h5, .project > img, .project > span {
-  transition: all 0.3s ease-out;
+
+.projectO:hover > span {
+	font-size: 15px;
 }
-.project:hover > span {
-  /*transform-origin: 0% 1600%;*/
-  transform: translate(0%, -500%) rotate(-15deg);
+.projectO:hover > h5 {
+	font-size: 30px;
 }
-.project:hover > h5, .project:hover > img {
-  transition: all 0.3s ease-in;
-  /* Safari */
--webkit-transform: rotate(-15deg);
-/* Firefox */
--moz-transform: rotate(-15deg);
-/* IE */
--ms-transform: rotate(-15deg);
-/* Opera */
--o-transform: rotate(-15deg);
-/* Internet Explorer */
-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0.5);
+/*set rotation to 0 on hover*/
+.projectO:hover > h5, .projectO:hover > img {
+	transform: rotate(0deg);
 }
-.project:hover > h5, .project:hover > span {
+
+/*make h5 and span text appear on hover (default opacity is 0) */
+.projectO:hover > h5, .projectO:hover > span {
   opacity: 1;
-  transition: all 0.3s ease-in;
-}
-#bottom {
-  font-size: 12px;
 }
