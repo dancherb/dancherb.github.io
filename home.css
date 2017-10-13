@@ -44,6 +44,7 @@ body:hover {
 a {
 	cursor: default;
 	text-decoration: none;
+	color: #171717;
 }
 h1, h4, h5 {
 	font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
@@ -93,13 +94,9 @@ i {
 	width: 500px;
 	padding-bottom: 20px;
 }
-/*try and center h5 and span in middle of line, with image */
-.projectC h5, .projectC span, .projectO h5, .projectO span {
-	/*display: inline;*/
-	/*width: 100%;
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);*/
+
+#project4 {
+	opacity: 0.5;
 }
 
 /*properties of title, image, text when open vs closed*/
