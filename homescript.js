@@ -34,7 +34,7 @@ function openProjects() {
     project3.className = "projectC"
     project4.className = "projectC"
     //
-    container.style.paddingTop  = "240px"
+    container.style.paddingTop  = "100px"
     //
     setTimeout(toggleIcon, 650)
     projectsOpen = false

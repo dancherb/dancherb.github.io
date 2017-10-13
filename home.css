@@ -31,7 +31,7 @@ body:hover {
 	background: #AFAFAF;
 }
 #container {
-	padding-top: 240px;
+	padding-top: 100px;
 	/*balances out the empty element beneath so that the text is centered - this padding is faded out once it opens*/
   width: 500px;
 	/*height: 100%;*/
@@ -92,6 +92,11 @@ i {
 /*PROJECTS LIST*/
 .projectC, .projectO {
 	width: 500px;
+}
+.projectC {
+	padding-bottom: 0px;
+}
+.projectO {
 	padding-bottom: 20px;
 }
 
