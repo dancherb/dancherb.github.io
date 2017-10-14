@@ -5,7 +5,7 @@
 body {
 	background-color: #3D3D43;
 	text-align: center;
-	font-size: 25px;
+	font-size: 21px;
 	color: white;
 	font-family: 'Josefin Sans', 'Trebuchet MS', sans-serif;
 	line-height: 1.5;
@@ -132,7 +132,7 @@ padding-right: 20px;
 	padding: 0px 20px;
 }
 #gradientOptions {
-	font-size: 17px;
+	font-size: 15px;
 }
 label > input{ /* hide radio button */
   visibility: hidden;
@@ -168,7 +168,7 @@ input:checked + img{ /* radio checked image */
 	margin-bottom: 10px;
 }
 output {
-	font-size: 17px;
+	font-size: 15px;
 	display: block;
 }
 input[type=range]::-webkit-slider-thumb {
