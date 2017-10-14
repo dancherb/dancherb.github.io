@@ -9,7 +9,7 @@ html {
 body {
 	background-color: #E0E0E0;
 	text-align: center;
-	font-size: 40px;
+	font-size: 32px;
 	color: #171717;
 	font-family: 'Josefin Sans', 'Trebuchet MS', sans-serif;
 }
@@ -53,6 +53,7 @@ h4 {
 /*TITLE CHERB TEXT*/
 #cherbtext {
 	position: relative;
+	transform:scale(1.25, 1.25);
 }
 #cherb1 {
 	height: 60%;

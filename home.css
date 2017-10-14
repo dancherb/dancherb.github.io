@@ -9,7 +9,7 @@ html {
 body {
 	background-color: #E0E0E0;
 	text-align: center;
-	font-size: 40px;
+	font-size: 35px;
 	color: #171717;
 	font-family: 'Josefin Sans', 'Trebuchet MS', sans-serif;
 }
@@ -57,6 +57,8 @@ h4 {
 }
 /*TITLE CHERB TEXT*/
 #cherbtext {
+	/*transform:scale(1.1,1.1); /* W3C */
+	transform:scale(1.14, 1.14); /* W3C */
 	position: relative;
 }
 #cherb1 {
