@@ -31,11 +31,7 @@ body:hover {
 	background: #AFAFAF;
 }
 #container {
-	padding-top: 100px;
-	/*balances out the empty element beneath so that the text is centered - this padding is faded out once it opens*/
-  width: 500px;
-	/*height: 100%;*/
-	/*margin: auto auto;*/
+  width: 700px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -49,12 +45,11 @@ a {
 h1, h4, h5 {
 	font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
 	color: #171717;
-	/*display: inline-block;*/
-	/*position: relative;*/
 }
 h4 {
 	display: inline;
 }
+
 /*TITLE CHERB TEXT*/
 #cherbtext {
 	position: relative;
@@ -70,17 +65,13 @@ h4 {
 }
 
 /*PROJECTS BUTTON*/
-
 i {
 	color:#171717;
 }
-.fa-envelope-o, .fa-envelope-open-o {
+.fa-folder-open-o {
   font-size: 35px;
 }
-.fa-paper-plane-o {
-  font-size: 30px;
-}
-.fa-envelope-o:hover, .fa-envelope-open-o:hover, .fa-paper-plane-o:hover {
+.fa-folder-open-o:hover {
 	color: #AFAFAF;
 }
 
@@ -90,26 +81,19 @@ i {
 }
 
 /*PROJECTS LIST*/
-.projectC, .projectO {
-	width: 500px;
-}
-.projectC {
-	padding-bottom: 0px;
+.projectO {
+	width: 700px;
 }
 .projectO {
 	padding-bottom: 20px;
 }
 
-#project4 {
-	opacity: 0.5;
-}
-
 /*properties of title, image, text when open vs closed*/
-.projectC h5 {
+/*.projectC h5 {
 	font-size: 0px;
 	opacity: 0;
 	display: inline;
-}
+}*/
 .projectO h5 {
 	font-size: 0px;
 	/*30px*/
@@ -117,21 +101,22 @@ i {
   opacity: 1;
 	display: inline;
 }
-.projectC span {
+/*.projectC span {
 	font-size: 0;
 	display: inline;
 	opacity: 0;
-}
+}*/
 .projectO span {
+	line-height: 1;
 	font-size: 0px;
 	/*15px*/
   display: inline;
   opacity: 0;
 }
-.projectC img {
+/*.projectC img {
 	width: 0px;
 	display: inline;
-}
+}*/
 .projectO img {
 	width: 70px;
 	display: inline;
@@ -139,23 +124,20 @@ i {
 	/*float:left;*/
 	/*text-align: center;*/
 }
-.projectC .fa {
+/*.projectC .fa {
   font-size: 0px;
-}
+}*/
 .projectO .fa {
   font-size: 20px;
 }
 
 /*enable transitions on h5, img and span*/
-.projectC h5, .projectC img, .projectC span, .projectC fa {
-  transition: all 0.3s ease;
-}
 .projectO h5, .projectO img, .projectO span, .projectO fa {
   transition: all 0.3s ease;
 }
 
 /*set default rotation to -15*/
-.projectC h5, .projectO img {
+.projectO h5, .projectC h5, .projectO img {
 	transform: rotate(-105deg);
 }
 
