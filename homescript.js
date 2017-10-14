@@ -41,3 +41,17 @@ function toggleIcon() {
   projectsIcon.classList.toggle("fa-envelope-open-o");
   projectsIcon.classList.toggle("fa-envelope-o");
 }
+
+// check if projects should start open (e.g. if coming straight back from flash page)
+function getUrlVars() {
+var vars = {};
+var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+vars[key] = value;
+});
+return vars;
+}
+var id = getUrlVars()["id"];
+console.log(id)
+if(id == 2) {
+  openProjects()
+}
