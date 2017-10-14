@@ -1,7 +1,3 @@
-// align text on vertical center of line, with center of image on the same line
-// get project icon on the centers of the page and the title and description around it
-// for flash page, see if you can store some information in the url (#firefly) to pass a function to open it with
-//  that game up, on part of a dynamic page, instead of having separate urls for each game
 var projectsOpen = false;
 projectsText.style.fontSize = "0px" //keep 'projects' title invisible and tiny initially
 projectsText.style.opacity = 0;
