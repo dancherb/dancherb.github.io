@@ -1,0 +1,113 @@
+* { /*CSS reset*/
+	padding: 0;
+	margin: 0;
+}
+body {
+	background-color: #3D3D43;
+	text-align: center;
+	font-size: 21px;
+	color: white;
+	font-family: 'Josefin Sans', 'Trebuchet MS', sans-serif;
+	line-height: 1.5;
+}
+body:hover {
+	/*prevent selection cursor when rolling over*/
+	cursor: default;
+}
+::-moz-selection {
+	background: #AFAFAF;
+}
+::selection {
+	background: #AFAFAF;
+}
+#bgleft {
+	background-color: #F3F3F3;
+	float:left;
+	padding-left:10px;
+	top: 0;
+  left: 0;
+  width: 210px;
+	min-height: 100vh; /*makes sure it always fills at least browser height*/
+  height: 100%; /*adjust height of this with height of map*/
+	z-index: 0;
+}
+#title {
+	position: absolute;
+ 	top: 65%;
+	left: 10px;
+ 	transform: translateY(-50%);
+}
+#aboutText {
+	color:#171717;
+	float: right;
+	padding-left: 0px;
+	font-size: 10px;
+	text-align: left;
+	color: black;
+	width: 160px;
+	opacity: 0;
+}
+.aboutIcon {
+	color:#171717;
+}
+.aboutIcon:hover {
+	color: #AFAFAF;
+}
+i {
+	color:#171717;
+}
+#container {
+	float: left;
+	/*width: 2800px;
+	min-width: 1100px;*/
+}
+#holdflash {
+  line-height: 0px;
+  text-align: center;
+  border: solid 10px #F3F3F3;
+  margin: auto auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+embed {
+  display: inline-block;
+}
+h1 {
+	display: inline-block;
+	float: left;
+	font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
+	position: relative;
+	font-size: 46px;
+}
+h2 {
+  display: inline-block;
+	float: left;
+	font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
+	position: relative;
+	font-size: 30px;
+  color: #171717;
+}
+#cherb1, #map1 {
+	text-decoration: none;
+	height: 60%;
+  position: absolute;
+  color: #383838;
+  overflow: hidden;
+}
+#cherb2, #map2 {
+	text-decoration: none;
+	color: #171717;
+}
+#cherbtext:hover > a {
+	color:#AFAFAF;
+}
+#maptext:hover > a {
+	color:#AFAFAF;
+}
+a {
+	cursor: default;
+}
+div {
+	display: inline-block;
+}
