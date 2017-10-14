@@ -101,6 +101,9 @@ i {
 .projectO {
 	padding-bottom: 20px;
 }
+.projectO:active {
+	opacity: 0.7;
+}
 
 #project4 {
 	opacity: 0.5;
