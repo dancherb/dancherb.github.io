@@ -18,6 +18,7 @@ div {
 }
 #projectsContain {
 	padding-top: 25px;
+	transition: all 0.8s ease;
 	/*position: relative;*/
 }
 body:hover {
@@ -31,6 +32,7 @@ body:hover {
 	background: #AFAFAF;
 }
 #container {
+	padding-top: 350px;
   width: 700px;
 	position: absolute;
 	top: 50%;
@@ -78,12 +80,19 @@ i {
 
 /*PROJECTS TEXT (h4)*/
 #projectsText {
+	transition: all 0.3s ease
   padding-bottom: 30px;
+	/*initial*/
+	font-size: 0;
+	opacity: 0;
 }
 
 /*PROJECTS LIST*/
-.projectO {
+.projectO, .projectO {
 	width: 700px;
+}
+.projectC {
+	padding-bottom: 0px;
 }
 .projectO {
 	padding-bottom: 20px;
@@ -93,11 +102,11 @@ i {
 }
 
 /*properties of title, image, text when open vs closed*/
-/*.projectC h5 {
+.projectC h5 {
 	font-size: 0px;
 	opacity: 0;
 	display: inline;
-}*/
+}
 .projectO h5 {
 	font-size: 0px;
 	/*30px*/
@@ -105,11 +114,11 @@ i {
   opacity: 1;
 	display: inline;
 }
-/*.projectC span {
+.projectC span {
 	font-size: 0;
 	display: inline;
 	opacity: 0;
-}*/
+}
 .projectO span {
 	line-height: 1;
 	font-size: 0px;
@@ -117,10 +126,10 @@ i {
   display: inline;
   opacity: 0;
 }
-/*.projectC img {
+.projectC img {
 	width: 0px;
 	display: inline;
-}*/
+}
 .projectO img {
 	width: 70px;
 	display: inline;
@@ -128,14 +137,18 @@ i {
 	/*float:left;*/
 	/*text-align: center;*/
 }
-/*.projectC .fa {
+.projectC .fa {
   font-size: 0px;
-}*/
+}
 .projectO .fa {
   font-size: 20px;
 }
 
 /*enable transitions on h5, img and span*/
+.projectC h5, .projectC img, .projectC span, .projectC fa {
+  transition: all 0.3s ease;
+}
+
 .projectO h5, .projectO img, .projectO span, .projectO fa {
   transition: all 0.3s ease;
 }
