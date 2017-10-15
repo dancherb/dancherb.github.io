@@ -80,7 +80,7 @@ i {
 
 /*PROJECTS TEXT (h4)*/
 #projectsText {
-	transition: all 0.3s ease
+	transition: all 0.3s ease;
   padding-bottom: 30px;
 	/*initial*/
 	font-size: 0;
