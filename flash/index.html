@@ -15,11 +15,11 @@
 				</a>
 			<br><div id="projectsContain">
 				<div id="projectsList">
-					<a href="hexep"><div id="project1" class="projectC"><h5>hexep</h5> <img src="icon.png" width="70"> <span>light a path through hexagons - an increasingly challenging puzzle game</span></div></a>
-					<br><a href="firefly"><div id="project2" class="projectC"><h5>firefly</h5> <img src="icon.png" width="70"> <span>explore caves, eat pills and light fire - an intense skill game</span></div></a>
-					<br><a href="kerixepplus"><div id="project3" class="projectC"><h5>kerixep plus</h5> <img src="icon.png" width="70"> <span>predecessor to hexep - an arcade puzzle game</span></div></a>
-					<br><a href="jetbot"><div id="project4" class="projectC"><h5>jetbot</h5> <img src="icon.png" width="70"> <span>escape the facility - an old school platformer</span></div></a>
-					<br><a href="stickmagequest"><div id="project5" class="projectC"><h5>stick mage quest</h5> <img src="icon.png" width="70"> <span>a short, surreal platformer RPG</span></div></a>
+					<a href="hexep"><div id="project1" class="projectC"><h5>hexep</h5> <img src="hexep.png" width="70"> <span>light a path through hexagons - an increasingly challenging puzzle game</span></div></a>
+					<br><a href="firefly"><div id="project2" class="projectC"><h5>firefly</h5> <img src="firefly.png" width="70"> <span>explore caves, eat pills and light fire - an intense skill game</span></div></a>
+					<br><a href="kerixepplus"><div id="project3" class="projectC"><h5>kerixep plus</h5> <img src="kerixepplus.png" width="70"> <span>predecessor to hexep - an arcade puzzle game</span></div></a>
+					<br><a href="jetbot"><div id="project4" class="projectC"><h5>jetbot</h5> <img src="jetbot.png" width="70"> <span>escape the facility - an old school platformer</span></div></a>
+					<!-- <br><a href="stickmagequest"><div id="project5" class="projectC"><h5>stick mage quest</h5> <img src="stickmagequest.png" width="70"> <span>a short, surreal platformer RPG</span></div></a> -->
 				</div>
 			</div>
 	</div>
@@ -33,14 +33,14 @@ function openList() {
   project2.className = "projectO"
   project3.className = "projectO"
   project4.className = "projectO"
-	project5.className = "projectO"
+	// project5.className = "projectO"
 }
 setTimeout(openUp, 1)
 function openUp() {
 	projectsText.style.transition = "all 0.3s ease";
 	projectsText.style.fontSize = "35px"
 	projectsText.style.opacity = 1
-	folderIcon.style.transition = "all 0.4s ease";
+	folderIcon.style.transition = "font-size 0.4s ease";
 	folderIcon.style.fontSize = "35px"
 	folderIcon.style.opacity = 1;
 	container.style.paddingTop = "0px"

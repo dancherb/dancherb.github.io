@@ -133,7 +133,8 @@ i {
 	display: inline;
 }
 .projectO img {
-	width: 70px;
+	border: solid 5px #171717;
+	width: 65px;
 	display: inline;
 	vertical-align:middle;
 	/*float:left;*/
