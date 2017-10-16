@@ -11,7 +11,7 @@
 	<div id="container">
 			<h1 id="cherbtext"><span id="cherb1">cherb</span><span id="cherb2">cherb</span></h1>
 				<h4 id="projectsText">flash</h4> <a href="/?id=2">
-					<i class="fa fa-folder-open-o" aria-hidden="true"></i>
+					<i class="fa fa-folder-open-o" id="folderIcon" aria-hidden="true"></i>
 				</a>
 			<br><div id="projectsContain">
 				<div id="projectsList">
@@ -40,6 +40,9 @@ function openUp() {
 	projectsText.style.transition = "all 0.3s ease";
 	projectsText.style.fontSize = "35px"
 	projectsText.style.opacity = 1
+	folderIcon.style.transition = "all 0.4s ease";
+	folderIcon.style.fontSize = "35px"
+	folderIcon.style.opacity = 1;
 	container.style.paddingTop = "0px"
 	container.style.transition = "all 0.8s ease";
 }
