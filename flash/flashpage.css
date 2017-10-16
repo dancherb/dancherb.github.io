@@ -33,7 +33,7 @@ body:hover {
 }
 #title {
 	position: absolute;
- 	top: 65%;
+ 	top: 50%;
 	left: 10px;
  	transform: translateY(-50%);
 }
