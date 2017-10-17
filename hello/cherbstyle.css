@@ -59,7 +59,7 @@ input:focus { /*remove blue outline on click, add own border*/
 /*styling placeholder text for different browsers*/
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 	color: #23526D;
-    opacity:  0.5
+  opacity:  0.5
 }
 ::-moz-placeholder { /* Firefox 19+ */
     color: #23526D;

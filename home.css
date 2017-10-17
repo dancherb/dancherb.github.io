@@ -164,7 +164,6 @@ i {
 .projectC h5, .projectO img {
 	transform: rotate(-105deg);
 }
-
 .projectO:hover > span {
 	font-size: 15px;
 }
