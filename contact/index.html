@@ -30,6 +30,12 @@ function sendMail()
         + encodeURIComponent("Email from " + name + " - " + email)
         + "&body=" + encodeURIComponent(message);
 }
+addEventListener("keydown",
+  function pressEnter(e) {
+    if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
+        sendMail()
+  }
+});
 </script>
 
 
