@@ -27,7 +27,7 @@ function sendMail()
     var name = document.getElementById("inputName").value;
 		var email = document.getElementById("inputEmail").value;
     document.location.href = "mailto:dan@cherb.co.uk?subject="
-        + encodeURIComponent(name, email)
+        + encodeURIComponent(name + email)
         + "&body=" + encodeURIComponent(message);
 }
 </script>
