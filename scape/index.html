@@ -97,6 +97,15 @@
     </div>
     <canvas id="canvas" width="820" height="480" style="border:0px solid white;"></canvas>
     <div id="goHolder"><a href="#" onclick="gogogo(true)" id="goButton">!!</a></div>
+    <div id="particles-js"></div>
     <script src="mapscript.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+    /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+    particlesJS.load('particles-js', '/particlesside.json', function() {
+      console.log('particle library loaded');
+    });
+    </script>
   </body>
 </html>
