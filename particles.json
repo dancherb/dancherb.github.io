@@ -11,7 +11,7 @@
       "value": "#353535"
     },
     "shape": {
-      "type": "circle",
+      "type": "square",
       "stroke": {
         "width": 0,
         "color": "#000000"
@@ -26,12 +26,12 @@
       }
     },
     "opacity": {
-      "value": 0.5,
+      "value": 0.3,
       "random": true,
       "anim": {
         "enable": true,
         "speed": 1,
-        "opacity_min": 0.1,
+        "opacity_min": 0.05,
         "sync": false
       }
     },
@@ -54,7 +54,7 @@
     },
     "move": {
       "enable": true,
-      "speed": 8,
+      "speed": 4,
       "direction": "none",
       "random": true,
       "straight": false,
