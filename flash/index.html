@@ -23,10 +23,9 @@
 				</div>
 			</div>
 	</div>
+<div id="particles-js"></div>
 
 <script>
-    // and then after a delay, open the projects
-
 setTimeout(openList, 300)
 function openList() {
   project1.className = "projectO"
@@ -46,7 +45,14 @@ function openUp() {
 	container.style.paddingTop = "0px"
 	container.style.transition = "all 0.8s ease";
 }
+</script>
 
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+particlesJS.load('particles-js', 'particles.json', function() {
+  console.log('particle library loaded');
+});
 </script>
 
 
