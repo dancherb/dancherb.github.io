@@ -39,7 +39,7 @@ function gogogo(refreshAll) { // main button
     layercount = Number(document.getElementById('layers').value)
     maxtsize = Number(document.getElementById('maxTileSize').value)
     document.getElementById('goHolder').style.lineHeight = (c.height+40)+"px" // position "go" button in middle
-    document.getElementById('bgleft').style.height = (c.height+180)+"px" // adjust sidebar height with map height
+    document.getElementById('particle-js').style.height = (c.height+180)+"px" // adjust sidebar height with map height
     // document.getElementById('bgleft').style.minHeight = 100+"%" // adjust sidebar height with map height
     document.getElementById('container').style.width = (c.width+450)+"px" // adjust page width with map width
     // mapwidth and mapheight in tiles
