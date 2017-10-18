@@ -1,12 +1,25 @@
 /*PARTICLES*/
-#particles-js {
+/*#particles-js {
 	background-color: #F3F3F3;
-	position: fixed;
+	float:left;
 	left: 0;
 	top: 0;
 	width: 220px;
+	min-height: 100vh;
 	height: 100%;
 	z-index: -2;
+}*/
+#particle-js {
+	/*replaces bgleft*/
+	background-color: #F3F3F3;
+	float:left;
+	padding-left:10px;
+	top: 0;
+  left: 0;
+  width: 210px;
+	min-height: 100vh; /*makes sure it always fills at least browser height*/
+  height: 100%; /*adjust height of this with height of map*/
+	z-index: 0;
 }
 * { /*CSS reset*/
 	padding: 0;
@@ -29,17 +42,6 @@ body:hover {
 }
 ::selection {
 	background: #AFAFAF;
-}
-#bgleft {
-	/*background-color: #F3F3F3;*/
-	float:left;
-	padding-left:10px;
-	top: 0;
-  left: 0;
-  width: 210px;
-	min-height: 100vh; /*makes sure it always fills at least browser height*/
-  height: 100%; /*adjust height of this with height of map*/
-	z-index: 0;
 }
 #title {
 	position: absolute;
