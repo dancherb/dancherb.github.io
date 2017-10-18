@@ -1,3 +1,9 @@
+/*PARTICLES*/
+#particles-js {
+	background: firebrick;
+	height: 400px;
+	width: 400px;
+}
 /*GENERAL*/
 * { /*CSS reset*/
 	padding: 0;
