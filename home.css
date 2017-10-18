@@ -49,6 +49,7 @@ body:hover {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	background: rgba(224,224,224,0.5)  
 }
 a {
 	cursor: default;
