@@ -9,6 +9,8 @@
 	min-height: 100vh; /*makes sure it always fills at least browser height*/
   height: 100%; /*adjust height of this with height of map*/
 	z-index: 0;
+	border: 0;
+	padding: 0;
 }
 * { /*CSS reset*/
 	padding: 0;
