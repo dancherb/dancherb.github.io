@@ -16,6 +16,8 @@ html {
   height: 100%;
 }
 body {
+	position: relative;
+	height: 100%;
 	background-color: #E0E0E0;
 	text-align: center;
 	font-size: 35px;
@@ -43,8 +45,6 @@ body:hover {
 	padding-top: 100px;
 	/*balances out the empty element beneath so that the text is centered - this padding is faded out once it opens*/
   width: 500px;
-	/*height: 100%;*/
-	/*margin: auto auto;*/
 	position: absolute;
 	top: 50%;
 	left: 50%;
