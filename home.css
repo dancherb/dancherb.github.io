@@ -1,6 +1,8 @@
 /*PARTICLES*/
 #particles-js {
 	position: fixed;
+	left: 25%;
+	top: 0;
 	width: 50%;
 	height: 100%;
 	z-index: -2;
