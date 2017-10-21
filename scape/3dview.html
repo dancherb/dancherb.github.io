@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://use.fontawesome.com/a20244987a.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <title>cherbscape</title>
+    <link rel = "stylesheet" type = "text/css" href = "style.css"/>
+    <link rel="shortcut icon" href="favicon.ico">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.5/paper-full.min.js"></script>
+
+<!-- PAPERSCRIPT SCRIPT -->
+<!-- to fix html buttons not working, assign the onchange event in the script instead of html -->
+<script type="text/paperscript" canvas="canvas">
+// about button and text
+aboutText.style.opacity = 0;
+function openAbout() {
+  if(aboutText.style.opacity === "0") {
+    aboutText.style.opacity = 1;
+    aboutText.style.paddingLeft = "10px";
+    aboutText.style.paddingTop = "10px";
+    // document.getElementById("aboutText").innerHTML = aboutDesc
+  } else {
+    aboutText.style.opacity = 0;
+    aboutText.style.paddingLeft = "0px";
+    aboutText.style.paddingTop = "0px";
+    // document.getElementById("aboutText").innerHTML = ""
+  }
+  aboutText.style.transition = "all 0.2s ease";
+  envelopeIcon.classList.toggle("fa-envelope-open-o");
+  envelopeIcon.classList.toggle("fa-envelope-o");
+}
+// map
+var c=document.getElementById("canvas");
+var cbg = c.getContext("2d");
+var firstTime = true;
+// refreshAll true when re-calculating everything, false when only redrawing tiles to change colours
+function gogogo(refreshAll) { // main button
+  console.log(refreshAll)
+  if(firstTime != false) {
+    firstTime = false // marks that it's now been loaded once
+  } else {
+    // cbg.clearRect(0, 0, c.width, c.height); // if it's already been loaded once before, clear all
+    project.clear()
+  }
+  if(refreshAll === true) {
+    // use tiles array to store information about tiles, put drawn objects in ctiles (canvas tiles)
+    btiles = [] // clears/creates array
+    ctiles = []
+    // MAP SETTINGS
+    // 2-20-100 and 10-20-50 are good, 1-40-200 for mad detail
+    givenWidth = document.getElementById('mapWidth').value
+    givenHeight = document.getElementById('mapHeight').value
+    c.width = givenWidth*1.2
+    c.height = givenHeight*1.2
+    tilesize = Number(document.getElementById('tileSize').value)
+    layercount = Number(document.getElementById('layers').value)
+    maxtsize = Number(document.getElementById('maxTileSize').value)
+    document.getElementById('goHolder').style.lineHeight = (c.height+40)+"px" // position "go" button in middle
+    document.getElementById('particles-js').style.height = (c.height+180)+"px" // adjust sidebar height with map height
+    // document.getElementById('bgleft').style.minHeight = 100+"%" // adjust sidebar height with map height
+    document.getElementById('container').style.width = (c.width+450)+"px" // adjust page width with map width
+    // mapwidth and mapheight in tiles
+    mapcolumns = Math.ceil(givenWidth/tilesize)
+    maprows = Math.ceil(givenHeight/tilesize)
+    tilecount = mapcolumns*maprows
+    baseweight = 0 // existing weightings will be added to this, then at the end 1-baseweight to fill remaining weight
+    var lowestStrength = 0.500;
+    var highestStrength = 0.500;
+    var weightRange = 0;
+    layers = {}
+    layertiles = []
+    var normalRects = new Group();
+    var shadeRects = new Group();
+    shadeRects.opacity = 0; // doesn't quite work yet as shade goes on top of everything, not carefully assigned
+    // list of layers. for each layer, a further list space. within this space is a list of tiles for each layer
+    // each tile in the list is an object with property strength (layertiles[i].tiles[j].strength)
+    for (i=1; i<=layercount; i++) {
+      // for each layer, generate properties and create grid
+      layers[i] = {}
+      // formula for generating tile sizes based on number of layers and max tile size
+      layers[i].size = maxtsize-((maxtsize/layercount)*(i-1)) //spread out so e.g. layer 1 = max size, l2 = 0.8, l3 = 0.6 etc
+      layers[i].columns = Math.ceil(mapcolumns/layers[i].size)
+      layers[i].rows = Math.ceil(maprows/layers[i].size)
+      layers[i].tilecount = layers[i].rows*layers[i].columns
+      // leaves space for base weight. equally divided weighting. for 0.5, 0.25, 0.125 etc use: 1/(Math.pow(weighthash, i))
+      layers[i].weighting = 1/(layercount+1)
+      baseweight += layers[i].weighting
+      // give each tile in grid a strength
+      layertiles[i] = []
+      layertiles[i].tiles = []
+      for (j=0; j<layers[i].tilecount; j++) {
+        layertiles[i].tiles[j] = {}
+        layertiles[i].tiles[j].strength = Math.random()
+      }
+    }
+    baseweight = 1-baseweight // base weight fills gap;
+  }
+  if(document.getElementById('gradientType1').checked) {
+    var gradientType = "Light"
+  } else if(document.getElementById('gradientType2').checked) {
+    var gradientType = "Dark"
+  } else {
+    var gradientType = "Off"
+  }
+  if(gradientType === "Dark") {
+    cbg.fillStyle = "black"
+  } else {
+    cbg.fillStyle = "white"
+  }
+  cbg.globalAlpha = 0 // 0 for 3d version
+  cbg.fillRect(0, 0, c.width, c.height);
+  // base layer tiles
+  for(i=0; i<tilecount; i++) {
+    if(refreshAll === true) {
+      // create and position
+      btiles[i] = {}
+      btiles[i].x = i%mapcolumns
+      btiles[i].xpos = tilesize*btiles[i].x
+      btiles[i].y = Math.floor(i/mapcolumns)
+      btiles[i].ypos = tilesize*btiles[i].y
+      btiles[i].strength = 0
+      // for each base tile, create space to list information about corresponding tile for each layer
+      btiles[i].ltiles = []
+      // find corresponding layer tiles and apply strength
+      for(j=1; j<=layercount; j++) {
+        // add object to this list for each layer
+        btiles[i].ltiles[j] = {}
+        // find which x and y tile from the layer j this tile fits into, and therefore which ultimate layer tile for each layer
+        btiles[i].ltiles[j].x = Math.floor(btiles[i].x/layers[j].size)
+        btiles[i].ltiles[j].y = Math.floor(btiles[i].y/layers[j].size)
+        btiles[i].ltiles[j].tile = btiles[i].ltiles[j].y*btiles[i].ltiles[j].x;
+        // dig up and take corresponding strength property from corresponding tile
+        btiles[i].ltiles[j].tilestrength = layertiles[j].tiles[btiles[i].ltiles[j].tile].strength
+        // add weighted strength
+        btiles[i].strength += btiles[i].ltiles[j].tilestrength * layers[j].weighting
+      }
+      // fill in rest of weight
+      btiles[i].strength += Math.random()*baseweight
+      // set highest and lowest strength
+      if(btiles[i].strength*100 < lowestStrength*100) {
+        lowestStrength = btiles[i].strength
+        weightRange = highestStrength-lowestStrength
+      }
+      if(btiles[i].strength*100 > highestStrength*100) {
+        highestStrength = btiles[i].strength
+        weightRange = highestStrength-lowestStrength
+      }
+    }
+    // do this when it's not a full refresh (AND when it is), i.e. when changing threshold sliders
+    // draw tiles
+    // THRESHOLDS 0.4 / 0.525 / 0.53 / 0.58 / 1
+    var deepwater = Number(document.getElementById('deepwater').value)/100
+    var water = Number(document.getElementById('water').value)/100
+    var sand = Number(document.getElementById('sand').value)/100
+    var land = Number(document.getElementById('land').value)/100
+    var mountain = Number(document.getElementById('mountain').value)/100
+    var minAlpha = 1-(Number(document.getElementById('gradient').value)/100) // affects impact of gradient shading on tiles
+    //relative weight and terrain
+    if(btiles[i].strength<deepwater) {
+      // btiles[i].terrainfill = "#1E7EB4";
+      // percentage position between lower and upper threshold. for deepwater and mountain, use +0.1 or -0.1 instead of 0 and 1
+      btiles[i].relativeStrength = 1-(deepwater-btiles[i].strength)/(deepwater-(1))
+    } else if(btiles[i].strength<water) {
+      // btiles[i].terrainfill = "#4AABD6"
+      btiles[i].relativeStrength = 1-(water-btiles[i].strength)/(water-deepwater)
+    } else if(btiles[i].strength<sand) {
+      // btiles[i].terrainfill = "#E5D37D"
+      btiles[i].relativeStrength = 1-(sand-btiles[i].strength)/(sand-water)
+    } else if(btiles[i].strength<land) {
+      // btiles[i].terrainfill = "#87D652"
+      btiles[i].relativeStrength = 1-(land-btiles[i].strength)/(land-sand)
+    } else if(btiles[i].strength<mountain) {
+      // btiles[i].terrainfill = "#E5E5E5"
+      btiles[i].relativeStrength = 1-((land+0.03)-btiles[i].strength)/((land+0.03)-land)
+    }
+    // use relativeStrength to shade individual tiles with height, and relativeWeight to map height
+    //find relative weight by taking what percentage individual strength (from lower bound) is of weight range
+    btiles[i].relativeWeight = (btiles[i].strength-lowestStrength)/weightRange
+    //use this to judge terrain, dividing it out equally based on thresholds;
+    btiles[i].terrainFill = btiles[i].relativeWeight<deepwater ? "#1E7EB4"
+    : btiles[i].relativeWeight<water ? "#4AABD6"
+    : btiles[i].relativeWeight<sand ? "#E5D37D"
+    : btiles[i].relativeWeight<land? "#87D652"
+    : "#E5E5E5";
+    // console.log(1/weightRange)
+    //number of height layers for each tile (based on its strength)
+    var vertcount = 1;
+    // only add extra layers if above water level
+    if(btiles[i].relativeWeight > water) {
+      vertcount = Math.ceil((btiles[i].relativeWeight-water)*60)
+    }
+    var vertratio = tilesize/10 // the distance (in fraction of tilesize) that extra layers of tiles should lie on top
+    //create a long rectangle to act as a shadow, then rotate it as well with the tile
+    var shadeyPoint = new Point(btiles[i].xpos, btiles[i].ypos);
+    var shadeySize = new Size(tilesize, tilesize+(vertratio*vertcount));
+    var shadeyRect = new Path.Rectangle(shadeyPoint, shadeySize);
+    var centerPoint = new Point(givenWidth/2, givenHeight/2)
+    shadeyRect.rotate(45, centerPoint);
+    shadeyRect.scale(1, 0.5, centerPoint);
+    shadeyRect.fillColor = "black";
+    shadeyRect.opacity = 0.5;
+    shadeRects.addChild(shadeyRect);
+    // for the weight of each tile, draw a number of rectangles relative to its height
+    for(j=0; j<vertcount; j++) {
+      var point = new Point(btiles[i].xpos-((vertratio)*j), btiles[i].ypos-((vertratio)*j));
+      var size = new Size(tilesize, tilesize);
+      var rect = new Path.Rectangle(point, size);
+      var shadeRect = new Path.Rectangle(point, size);
+      // var centerPoint = new Point(c.width/2, c.height/2)
+      rect.rotate(45, centerPoint);
+      rect.scale(1, 0.5, centerPoint);
+      rect.scale(1.05, 1.05) // just to remove black border
+      rect.fillColor = btiles[i].terrainFill
+      // normalRects.addChild(rect)
+      // minimum alpha based on big vert count is
+      if(vertcount>1) {
+        shadeRect.rotate(45, centerPoint);
+        shadeRect.scale(1, 0.5, centerPoint);
+        shadeRect.scale(1.05, 1.05)
+        shadeRect.fillColor = "black";
+        // opacity based on how high in the block it is
+        shadeRect.opacity = 0.5-(j/(vertcount-1))/2
+        // opacity based on relative weight
+        // shadeRect.opacity += (btiles[i].relativeStrength/4)
+        // if(shadeRect.opacity < 0) {
+        //   shadeRect.opacity = 0
+        // }
+      }
+    }
+  }
+  // add shade
+  shadecontext = canvas.getContext('2d')
+  var shadeimg = new Image();
+  shadeimg.src = "shade.png";
+  shadeimg.onload = function() {
+       shadecontext.globalAlpha = 0.0 // 0.2
+       shadecontext.drawImage(shadeimg, 0, 0, c.width, c.height);
+  }
+}
+addEventListener("keydown",
+  function pressEnter(e) {
+    if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
+        gogogo(true);
+  }
+});
+gogogo(true);
+</script>
+
+<!-- PAPERSCRIPT SCRIPT FINITO -->
+
+  </head>
+  <body>
+    <div id="container">
+      <div id="particles-js"></div>
+          <div id="title">
+            <h1 id="cherbtext"><a id="cherb1" href="/">cherb</a><a id="cherb2" href="/">cherb</a></h1>
+            <h1 id="maptext"><a id="map1" href="index.html">scape</a><a id="map2" href="index.html">scape</a></h1>
+          <br>
+          <div id="about">
+            <a id="aboutButton" href="#" onclick="openAbout()"><i id="envelopeIcon" class="fa fa-envelope-o aboutIcon" aria-hidden="true"></i></a>
+            <div id="aboutText">A random landscape generator that uses multiple layers of noise
+            (the number of layers marked by the <em>resolution</em>) of increasing grain sizes, melding them together
+            to create a map. Grain size is indicated by <em>block size</em> - which controls the range, or largest grain
+            size - and tends to affect the general size of land masses. Each base tile (<em>tile size</em>) absorbs proportionally
+            the intensity of its parent tile for each noise layer, and is allocated a terrain type based on the terrain thresholds.
+            Gradient effects further indicate the ultimate intensity (think of it as height) of each base tile.
+            </div>
+          </div>
+    </div>
+
+
+      <div class="controls">
+       <div class="controlhold">Width<br>
+        <output id="showWidth">480</output>
+        <input type="range" id="mapWidth" min="0" max="1800" value="480" step="20" class="slider"
+        oninput="showWidth.value=value"></div>
+
+        <div class="controlhold">Height<br>
+        <output id="showHeight">480</output>
+        <input type="range" id="mapHeight" min="0" max="1000" value="480" step="20"class="slider"
+        oninput="showHeight.value=value"></div>
+
+        <div class="controlhold">Tile Size<br>
+        <output id="showTileSize">30</output>
+        <input type="range" id="tileSize" min="1" max="50" value="30" step="1" class="slider"
+        oninput="showTileSize.value=value"></div>
+
+        <div class="controlhold">Resolution<br>
+        <output id="showLayers">50</output>
+        <input type="range" id="layers" min="1" max="100" value="50" step="1" class="slider"
+        oninput="showLayers.value=value"></div>
+
+        <div class="controlhold">Block Size<br>
+        <output id="showMaxTileSize">60</output>
+        <input type="range" id="maxTileSize" min="0" max="400" value="60" class="slider" step="5"
+        oninput="showMaxTileSize.value=value"></div>
+
+      </div>
+      <br>
+      <div id="terraincontrols">
+        <div id="terrainInner">Terrain<br>
+
+          <output id="showDeepWater"><20</output>
+          <input type="range" id="deepwater" min="0" max="100" value="20" class="slider"
+          oninput="showDeepWater.value='<'+value" onchange="gogogo(false)">
+
+          <output id="showWater"><50</output>
+          <input type="range" id="water" min="0" max="100" value="50" class="slider"
+          oninput="showWater.value='<'+value" onchange="gogogo(false)">
+
+          <output id="showSand"><60</output>
+          <input type="range" id="sand" min="0" max="100" value="60" class="slider"
+          oninput="showSand.value='<'+value" onchange="gogogo(false)">
+
+          <output id="showLand"><80</output>
+          <input type="range" id="land" min="0" max="100" value="80" class="slider"
+          oninput="showLand.value='<'+value" onchange="gogogo(false)">
+
+          <output id="showMountain"><100</output>
+          <input type="range" id="mountain" min="0" max="100" value="100" class="slider"
+          oninput="showMountain.value='<'+value" onchange="gogogo(false)">
+          <hr style="height:8px; visibility:hidden;">Gradient<br>
+          <output id="showGradient"><40%</output>
+          <input type="range" id="gradient" min="0" max="100" value="40" class="slider"
+          oninput="showGradient.value=value+'%'" onchange="gogogo(false)">
+
+         <span id="gradientOptions">
+
+          Light <label><input id="gradientType1" type="radio" name="gradientType" value="Light" onclick="gogogo(false)"><img src="crosstint.png" class="radioimg"></label><br>
+
+          Dark <label><input id="gradientType2" type="radio" name="gradientType" value="Dark" onclick="gogogo(false)" checked><img src="crosstint.png" class="radioimg"></label><br>
+
+          None <label><input id="gradientType3" type="radio" name="gradientType" value="Off" onclick="gogogo(false)"><img src="crosstint.png" class="radioimg"></label>
+
+        </span>
+      </div>
+    </div>
+    <canvas id="canvas" width="480" height="480" style="border:0px solid white;"></canvas>
+    <div id="goHolder"><a href="#" onclick="gogogo(true)" id="goButton">!!</a></div>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+    /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+    particlesJS.load('particles-js', '/particlesside.json', function() {
+      console.log('particle library loaded');
+    });
+    </script> -->
+
+</body>
+</html>
