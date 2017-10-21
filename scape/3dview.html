@@ -211,14 +211,14 @@ function gogogo(refreshAll) { // main button
       // var centerPoint = new Point(c.width/2, c.height/2)
       rect.rotate(45, centerPoint);
       rect.scale(1, 0.5, centerPoint);
-      rect.scale(1.05, 1.05) // just to remove black border
+      rect.scale(1.1, 1.1) // just to remove black border
       rect.fillColor = btiles[i].terrainFill
       // normalRects.addChild(rect)
       // minimum alpha based on big vert count is
       if(vertcount>1) {
         shadeRect.rotate(45, centerPoint);
         shadeRect.scale(1, 0.5, centerPoint);
-        shadeRect.scale(1.05, 1.05)
+        shadeRect.scale(1.1, 1.1)
         shadeRect.fillColor = "black";
         // opacity based on how high in the block it is
         shadeRect.opacity = 0.5-(j/(vertcount-1))/2
