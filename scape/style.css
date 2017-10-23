@@ -104,6 +104,11 @@ div {
  line-height: 480px;
  vertical-align: top;
 }
+#cogs {
+	color: white;
+	/*font-size: 35px;*/
+	font-size: 0px;
+}
 #goButton {
 text-decoration: none;
 color: white;
