@@ -371,7 +371,7 @@ and down (y + half of the added height) -->
             //move down to fill screen (make space for layers on top)
             lightRect.position += new Point(0, (vertratio*vertmulti)/2);
             // brightness of highest tile based on how high it is, ad how far from top corner it is
-            lightRect.opacity = (vertcount/100) * (((1-btiles[i].y/maprows) + (1-btiles[i].x/mapcolumns))/2)
+            lightRect.opacity = (vertcount/100) * (((btiles[i].y/maprows) + (1-btiles[i].x/mapcolumns))/2)
             console.log(lightRect.opacity)
           }
         }
