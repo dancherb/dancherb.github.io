@@ -168,7 +168,7 @@ function showGears() {
   document.getElementById('cogs').style.fontSize = "28px"
   loadshade = canvas.getContext('2d')
   loadshade.fillStyle="#3D3D43"
-  loadshade.globalAlpha = 0.5
+  loadshade.globalAlpha = 0.3
   loadshade.fillRect(0, 0, c.width, c.height);
 }
 function hideGears() {
