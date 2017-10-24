@@ -89,12 +89,19 @@ h2 {
 	vertical-align: bottom;
 	transition: all 0.3s ease;
 }
-.viewlink:hover > img {
+.activeview img {
 	transform: rotate(-15deg);
-	opacity: 0.5;
+	opacity: 0.4;
+}
+.activeview h2 {
+	opacity: 0.4;
+}
+.viewlink:hover > img {
+	transform: rotate(-10deg);
+	opacity: 0.6;
 }
 .viewlink:hover > h2 {
-	color:#AFAFAF;
+	opacity: 0.5;
 }
 #cherb1, #map1 {
 	text-decoration: none;
