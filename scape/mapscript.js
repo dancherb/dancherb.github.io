@@ -210,4 +210,4 @@ document.getElementById("goHolder").addEventListener("click", function() {
 //    showGears(); setTimeout(gogogo.bind(null, false), 10);
 //  } )
 
-document.getElementById("aboutButton").addEventListener("click", openAbout)
+// document.getElementById("aboutButton").addEventListener("click", openAbout)
