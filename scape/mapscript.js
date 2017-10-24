@@ -152,20 +152,62 @@ function gogogo(refreshAll) { // main button
     }
     ctiles.fillRect(btiles[i].xpos, btiles[i].ypos, tilesize, tilesize);
   }
+  hideGears()
   // add shade
   shadecontext = canvas.getContext('2d')
   var shadeimg = new Image();
   shadeimg.src = "shade.png";
   shadeimg.onload = function() {
        console.log("load shade")
-       shadecontext.globalAlpha = 0.2
+       shadecontext.globalAlpha = 0.4
        shadecontext.drawImage(shadeimg, 0, 0, c.width, c.height);
   }
 }
+function showGears() {
+  document.getElementById('goButton').style.fontSize = "0px"
+  document.getElementById('cogs').style.fontSize = "28px"
+  loadshade = canvas.getContext('2d')
+  loadshade.fillStyle="#3D3D43"
+  loadshade.globalAlpha = 0.5
+  loadshade.fillRect(0, 0, c.width, c.height);
+}
+function hideGears() {
+  document.getElementById('goButton').style.fontSize = "45px"
+  document.getElementById('cogs').style.fontSize = "0px"
+}
+showGears()
 gogogo(true)
 addEventListener("keydown",
   function pressEnter(e) {
     if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
-        gogogo(true);
+      showGears();
+      setTimeout(gogogo.bind(null, true), 10);
   }
 });
+
+//html buttons
+document.getElementById("goHolder").addEventListener("click", function() {
+   showGears(); setTimeout(gogogo.bind(null, true), 10);
+ } )
+
+// disabled for terrain thresholds to avoid annoying flashing, instead more of a feel of real time results
+// document.getElementById("deepwater").addEventListener("change", function() {
+//    showGears(); setTimeout(gogogo.bind(null, false), 10);
+//  } )
+// document.getElementById("water").addEventListener("change", function() {
+//    showGears(); setTimeout(gogogo.bind(null, false), 10);
+//  } )
+// document.getElementById("sand").addEventListener("change", function() {
+//    showGears(); setTimeout(gogogo.bind(null, false), 10);
+//  } )
+// document.getElementById("land").addEventListener("change", function() {
+//    showGears(); setTimeout(gogogo.bind(null, false), 10);
+//  } )
+// document.getElementById("mountain").addEventListener("change", function() {
+//    showGears(); setTimeout(gogogo.bind(null, false), 10);
+//  } )
+// document.getElementById("heightScale").addEventListener("change", function() {
+//    showGears(); setTimeout(gogogo.bind(null, false), 10);
+//  } )
+
+document.getElementById("aboutButton").addEventListener("click", openAbout)
