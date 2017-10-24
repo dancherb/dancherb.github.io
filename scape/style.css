@@ -61,7 +61,7 @@ i {
 }
 #container {
 	float: left;
-	width: 2800px;
+	/*width: 2800px;*/
 	min-width: 1100px;
 }
 canvas {
@@ -89,12 +89,19 @@ h2 {
 	vertical-align: bottom;
 	transition: all 0.3s ease;
 }
-.viewlink:hover > img {
+.activeview img {
 	transform: rotate(-15deg);
-	opacity: 0.5;
+	opacity: 0.4;
+}
+.activeview h2 {
+	opacity: 0.4;
+}
+.viewlink:hover > img {
+	transform: rotate(-10deg);
+	opacity: 0.6;
 }
 .viewlink:hover > h2 {
-	color:#AFAFAF;
+	opacity: 0.5;
 }
 #cherb1, #map1 {
 	text-decoration: none;
@@ -127,12 +134,13 @@ div {
 #cogs {
 	color: white;
 	/*font-size: 35px;*/
-	font-size: 0px;
+	font-size: 35px;
 }
 #goButton {
 text-decoration: none;
 color: white;
-font-size: 45px;
+font-size: 0px;
+/*font-size: 45px;*/
 font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
 display: inline-block;
 padding-right: 20px;
