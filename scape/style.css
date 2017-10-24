@@ -36,7 +36,7 @@ body:hover {
 }
 #title {
 	position: absolute;
- 	top: 65%;
+ 	top: 55%;
 	left: 10px;
  	transform: translateY(-50%);
 }
@@ -46,7 +46,7 @@ body:hover {
 	padding-left: 0px;
 	font-size: 10px;
 	text-align: left;
-	color: black;
+	/*color: black;*/
 	width: 160px;
 	opacity: 0;
 }
@@ -75,6 +75,26 @@ h1 {
 	font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
 	position: relative;
 	font-size: 46px;
+}
+h2 {
+	display: inline-block;
+	font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
+	font-size: 30px;
+	color: #171717;
+	padding-right: 15px;
+	padding-top: 25px;
+}
+#title img {
+	border: solid 4px #171717;
+	vertical-align: bottom;
+	transition: all 0.3s ease;
+}
+.viewlink:hover > img {
+	transform: rotate(-15deg);
+	opacity: 0.5;
+}
+.viewlink:hover > h2 {
+	color:#AFAFAF;
 }
 #cherb1, #map1 {
 	text-decoration: none;

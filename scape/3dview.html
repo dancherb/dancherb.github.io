@@ -20,6 +20,9 @@ and down (y + half of the added height) -->
     <div id="container">
       <div id="particles-js"></div>
           <div id="title">
+            <a href="index.html" class="viewlink"><h2>2d</h2><img src="../img/iconscape.png" width="50"></a>
+            <br><a href="3dview.html" class="viewlink"><h2>3d</h2><img src="../img/iconscape3d.png" width="50"></a>
+            <br><br>
             <h1 id="cherbtext"><a id="cherb1" href="/">cherb</a><a id="cherb2" href="/">cherb</a></h1>
             <h1 id="maptext"><a id="map1" href="index.html">scape</a><a id="map2" href="index.html">scape</a></h1>
           <br>
@@ -30,7 +33,8 @@ and down (y + half of the added height) -->
             to create a map. Grain size is indicated by <em>block size</em> - which controls the range, or largest grain
             size - and tends to affect the general size of land masses. Each base tile (<em>tile size</em>) absorbs proportionally
             the intensity of its parent tile for each noise layer, and is allocated a terrain type based on the terrain thresholds.
-            Gradient effects further indicate the ultimate intensity (think of it as height) of each base tile.
+            Gradient effects further indicate the ultimate intensity (think of it as height) of each base tile, along with
+            basic shading and lighting effects in 3D view.
             </div>
           </div>
     </div>
@@ -39,12 +43,12 @@ and down (y + half of the added height) -->
       <div class="controls">
        <div class="controlhold">Width<br>
         <output id="showWidth">20</output>
-        <input type="range" id="mapWidth" min="0" max="200" value="25" step="5" class="slider"
+        <input type="range" id="mapWidth" min="0" max="200" value="20" step="5" class="slider"
         oninput="showWidth.value=value"></div>
 
         <div class="controlhold">Height<br>
         <output id="showHeight">20</output>
-        <input type="range" id="mapHeight" min="1" max="200" value="25" step="5"class="slider"
+        <input type="range" id="mapHeight" min="0" max="200" value="20" step="5"class="slider"
         oninput="showHeight.value=value"></div>
 
         <div class="controlhold">Tile Size<br>
@@ -94,7 +98,7 @@ and down (y + half of the added height) -->
 
       </div>
     </div>
-    <canvas id="canvas" width="800" height="500" style="border:0px solid white;"></canvas>
+    <canvas id="canvas" width="600" height="500" style="border:0px solid white;"></canvas>
     <div id="goHolder">
       <div id="loadHolder"><i class="fa fa-cogs" id="cogs" aria-hidden="true"></i></div>
       <a href="#" id="goButton">!!</a>
