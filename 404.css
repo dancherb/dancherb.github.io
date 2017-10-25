@@ -1,3 +1,12 @@
+/*PARTICLES*/
+#particles-js {
+	position: fixed;
+	left: 20%;
+	top: 0;
+	width: 60%;
+	height: 100%;
+	z-index: -2;
+}
 /*GENERAL*/
 * { /*CSS reset*/
 	padding: 0;
