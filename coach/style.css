@@ -22,7 +22,7 @@ a {
 	color: white;
 }
 a:hover {
-	color: #AFAFAF;
+	color: #B8B8B8;
 }
 ::-moz-selection {
 	background: #AFAFAF;
@@ -96,8 +96,8 @@ h1 {
   background-repeat: repeat;
 }
 .container h2 {
-  text-align: left;
-  padding-left: 20px;
+  /*text-align: left;*/
+  /*padding-left: 20px;*/
 }
 .mainBit {
   background:rgba(0, 0, 0, 0.4);
