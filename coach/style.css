@@ -1,0 +1,114 @@
+* { /*CSS reset*/
+	padding: 0;
+	margin: 0;
+}
+body {
+  color: white;
+  background-color: #333333;
+  font-family: 'Arvo', serif;
+}
+h1, h2, h3, h4, h5 {
+  font-family: 'Berkshire Swash', cursive;
+}
+div {
+  display: inline-block;
+}
+table {
+  border-spacing: 30px 5px;
+}
+/*TOP BAR*/
+#topbar {
+  position: fixed;
+  width: 600px;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  font-size: 27px;
+}
+#topbarMain {
+  width: 600px;
+  background:rgba(0, 0, 0, 0.7);
+}
+.topButton {
+  padding: 0 15px;
+}
+/*TITLE*/
+#title {
+  width: 600px;
+  /*border: solid 2px black;*/
+  padding-bottom: 20px;
+  background:rgba(0, 0, 0, 0.4)
+}
+h1 {
+  display: inline-block;
+  font-size: 80px;
+}
+#theText {
+  position: relative;
+  left: 15px;
+  top: 0px;
+  font-size: 60px;
+}
+#coachText {
+  position: relative;
+  left: 20px;
+  top: 30px;
+  font-size: 100px;
+}
+#andText {
+  position: relative;
+  left: -20px;
+  top: -35px;
+  font-size: 100px;
+}
+#horsesText {
+  position: relative;
+  left: -30px;
+  top: -20px;
+  font-size: 100px;
+}
+#undertext {
+  font-size: 20px;
+}
+/*MAIN CONTAINERS*/
+.container {
+  position: absolute;
+  width: 100%;
+  height: 750px;
+  margin: auto;
+  text-align: center;
+  background-size: cover;
+  background-repeat: repeat;
+}
+.container h2 {
+  text-align: left;
+  padding-left: 20px;
+}
+.mainBit {
+  background:rgba(0, 0, 0, 0.4);
+  padding: 10px 0px;
+  width: 600px;
+  text-align: center;
+}
+#main0 {
+  background-image: url("img/fire.jpg");
+}
+#mainHolder1 {
+  top: 750px;
+  left: 0;
+  width: 100%;
+  background-image: url("img/bridge.jpg");
+}
+#mainHolder2 {
+  top: 1500px;
+  left: 0;
+  width: 100%;
+  background-image: url("img/meat.jpg");
+}
+#mainHolder3 {
+  top: 2250px;
+  left: 0;
+  width: 100%;
+  background-image: url("img/coffee.jpg");
+}
