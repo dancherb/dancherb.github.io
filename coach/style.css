@@ -16,6 +16,20 @@ div {
 table {
   border-spacing: 30px 5px;
 }
+a {
+	cursor: default;
+	text-decoration: none;
+	color: white;
+}
+a:hover {
+	color: #AFAFAF;
+}
+::-moz-selection {
+	background: #AFAFAF;
+}
+::selection {
+	background: #AFAFAF;
+}
 /*TOP BAR*/
 #topbar {
   position: fixed;
@@ -91,22 +105,22 @@ h1 {
   width: 600px;
   text-align: center;
 }
-#main0 {
+#Welcome {
   background-image: url("img/fire.jpg");
 }
-#mainHolder1 {
+#FindUs {
   top: 750px;
   left: 0;
   width: 100%;
   background-image: url("img/bridge.jpg");
 }
-#mainHolder2 {
+#Menu{
   top: 1500px;
   left: 0;
   width: 100%;
   background-image: url("img/meat.jpg");
 }
-#mainHolder3 {
+#Book {
   top: 2250px;
   left: 0;
   width: 100%;
