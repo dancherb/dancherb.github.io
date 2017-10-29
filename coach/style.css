@@ -30,6 +30,11 @@ a:hover {
 ::selection {
 	background: #AFAFAF;
 }
+#main1 .fa {
+	font-size: 50px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
 #main2 img {
 	border: 5px solid white;
 	border-radius: 20px;
