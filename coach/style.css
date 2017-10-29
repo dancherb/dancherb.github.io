@@ -7,6 +7,9 @@ body {
   background-color: #333333;
   font-family: 'Copse', serif;
 }
+body:hover {
+	cursor: default;
+}
 h1, h2, h3, h4, h5 {
   font-family: 'Berkshire Swash', cursive;
 }
@@ -20,9 +23,12 @@ a {
 	cursor: default;
 	text-decoration: none;
 	color: white;
+	transition: all 0.15s ease;
 }
 a:hover {
-	color: #B8B8B8;
+	/*color: #B8B8B8;*/
+	opacity: 0.6;
+	transition: all 0.15s ease;
 }
 ::-moz-selection {
 	background: #AFAFAF;
