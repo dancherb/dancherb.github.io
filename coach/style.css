@@ -12,11 +12,12 @@ body:hover {
 }
 h1, h2, h3, h4, h5 {
   font-family: 'Berkshire Swash', cursive;
+	display: inline-block;
 }
 div {
   display: inline-block;
 }
-table {
+#Menu table {
   border-spacing: 30px 5px;
 }
 a {
@@ -30,6 +31,12 @@ a:hover {
 	opacity: 0.6;
 	transition: all 0.15s ease;
 }
+#topbarMain a:hover {
+	font-size: 26px;
+}
+#Book a:hover {
+	font-size: 17px;
+}
 ::-moz-selection {
 	background: #AFAFAF;
 }
@@ -38,7 +45,7 @@ a:hover {
 }
 #main1 .fa {
 	font-size: 50px;
-	padding-left: 30px;
+	padding-left: 20px;
 	padding-right: 30px;
 }
 #main2 img {
@@ -61,14 +68,18 @@ p {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
-  font-size: 27px;
+  font-size: 25px;
 }
 #topbarMain {
+	/*font-size: 25px;*/
+	vertical-align: middle;
   width: 650px;
+	height: 35px;
   background:rgba(0, 0, 0, 0.7);
 }
 .topButton {
   padding: 0 20px;
+	vertical-align: middle;
 }
 /*TITLE*/
 #title {
@@ -118,9 +129,8 @@ h1 {
   background-size: cover;
   background-repeat: repeat;
 }
-.container h2 {
-  /*text-align: left;*/
-  /*padding-left: 20px;*/
+#Book {
+	height: 840px;
 }
 .mainBit {
   background:rgba(0, 0, 0, 0.4);
@@ -148,4 +158,75 @@ h1 {
   left: 0;
   width: 100%;
   background-image: url("img/coffee.jpg");
+}
+/*INPUTS*/
+input {
+	font-size: 20px;
+	font-family: 'Copse', serif;
+	color: white;
+	background-color: transparent;
+	border: 0px;
+	display: inline-block;
+	transition: all 0.2s ease;
+	padding: 10px;
+}
+input:hover {
+	background:rgba(0, 0, 0, 0.4);
+	transition: all 0.2s ease;
+}
+input:focus { /*remove blue outline on click, add own border*/
+    outline: 0;
+}
+#inputName, #inputPhone {
+	width: 300px;
+}
+#inputNumber {
+	width: 60px;
+}
+#inputDate {
+	width: 220px;
+}
+#inputTime {
+	width: 100px;
+}
+#inputMessage {
+	width: 520px;
+	height: 100px;
+	font-size: 20px;
+	font-family: 'Copse', serif;
+	color: white;
+	background-color: transparent;
+	border: 0px;
+	resize: none;
+	padding: 10px;
+	transition: all 0.2s ease;
+	text-align: center;
+}
+#inputMessage:focus {
+	outline: 0;
+}
+#inputMessage:hover {
+	background:rgba(0, 0, 0, 0.4);
+	transition: all 0.2s ease;
+}
+#Book table {
+	table-layout: fixed;
+	width: 100px;
+  border-spacing: 50px 5px;
+	padding: 15px;
+	text-align: left;
+}
+#Book tr:hover {
+	/*background:rgba(0, 0, 0, 0.4);*/
+}
+.tLeft {
+	table-layout: fixed;
+	width: 200px;
+	text-align: right;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #D9D9D9
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #D9D9D9
 }

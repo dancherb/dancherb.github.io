@@ -10,6 +10,24 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
     <title>The Coach and Horses, Clifton - A traditional country pub in the heart of the city.</title>
+    <!-- smooth scrolling -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      $("a").on('click', function(event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          var hash = this.hash;
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 600, function(){
+            window.location.hash = hash;
+          });
+        }
+      });
+    });
+    </script>
+    <!--  -->
 </head>
 
 
@@ -101,17 +119,16 @@
       <div id="main1" class="mainBit">
         <br>
         <h1>Find Us</h1>
-        <h2>In Bristol</h2>
-        <br>
+        <br><br><h2>In Bristol</h2>
+        <br><br>
         <iframe width="500" height="350" frameborder="0" style="border:0"
 src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJY7PAUemNcUgRgaFCpazF54Y&key=AIzaSyBcYwUzbBEtFUeLrJ-UULmSy1CmHOaIBxQ" allowfullscreen></iframe>
-        <br><br>
-        <h2>And online</h2>
         <br>
+        <br><h2>And online</h2>
+        <br><br>
         <a href="https://www.facebook.com/Coachandhorsesinclifton" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-        <i class="fa fa-twitter" aria-hidden="true"></i>
         <a href="https://www.tripadvisor.co.uk/Restaurant_Review-g186220-d2712828-Reviews-Coach_and_Horses-Bristol_England.html" target="_blank"><i class="fa fa-tripadvisor" aria-hidden="true"></i></a>
-        <hr style="height:15px; visibility:hidden;">
+        <hr style="height:10px; visibility:hidden;">
       </div>
     </div>
 
@@ -121,7 +138,7 @@ src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJY7PAUemNcUgRgaFCp
         <br>
         <h1>Menus</h1>
         <br><br>
-        <p>We serve an extensive range of delicious home-cooked food, with special roasts every Sunday (we advise booking for these!)
+        <p>We serve an extensive range of lovely home-cooked food, with special roasts every Sunday (we advise booking for these!)
         <br><br>
         <table style="width:100%">
           <tr>
@@ -131,8 +148,8 @@ src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJY7PAUemNcUgRgaFCp
           </tr>
           <tr>
             <td>
-              <a href="img/CoachAndHorsesSundayMenu.pdf" target="_blank">
-                <img src="img/sundaylunch.png" alt="Sunday Lunch Menu" width= "150">
+              <a>
+                <img src="img/menu.png" alt="Main Menu" width= "150">
               </a>
             </td>
             <td>
@@ -141,8 +158,8 @@ src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJY7PAUemNcUgRgaFCp
               </a>
             </td>
             <td>
-              <a href="img/CoachAndHorsesSundayMenu.pdf" target="_blank">
-                <img src="img/sundaylunch.png" alt="Sunday Lunch Menu" width= "150">
+              <a>
+                <img src="img/christmasmenu.png" alt="Christmas Menu" width= "150">
               </a>
             </td>
           </tr>
@@ -157,29 +174,47 @@ src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJY7PAUemNcUgRgaFCp
         <br>
         <h1>Make A Booking</h1>
         <br><br>
-        <p>As well as looking after small groups we tailor for parties and functions, from three-course meals to buffets - just let us know what you're after.</p>
-        <br><br>
-        <h2>Name:</h1>
+        <p>As well as small groups we look after parties and functions, from three-course meals to buffets - just let us know what you're after.</p>
+        <table style="width:100%">
+          <tr>
+            <td class="tLeft"><h2>Name:</h1></td>
+            <td class="tRight"><input id="inputName" type="text" name="name" placeholder="~"></td>
+          </tr>
+          <tr>
+            <td class="tLeft"><h2>Phone Number:</h1></td>
+            <td class="tRight"><input id="inputPhone" type="text" name="phone" placeholder="~"></td>
+          </tr>
+          <tr>
+            <td class="tLeft"><h2>Number of People:</h2></td>
+            <td class="tRight"><input id="inputNumber" type="number" name="number" min="1" max="100" placeholder="~"></td>
+          </tr>
+          <tr>
+            <td class="tLeft"><h2>Date:</h2></td>
+            <td class="tRight"><input id="inputDate" type="date" name="date"></td>
+          </tr>
+          <tr>
+            <td class="tLeft"><h2>Time:</h2></td>
+            <td class="tRight"><input id="inputTime" type="time" name="time"></td>
+          </tr>
+        </table>
         <br>
-        <h2>Phone Number:</h1>
-        <br>
-        <h2>Number of People:</h2>
-        <br>
-        <h2>Date:</h2>
-        <h2>Time:</h2>
-        <br>
-        <h2>Would you like to pre-order, or make a special request?</h2>
+        <h2>Would you like to pre-order or make any special requests?</h2>
+        <br><br><textarea id="inputMessage" type="text" name="message" placeholder="(optional)"></textarea>
         <br>
         <br>
-        <br>
-        <h2>Send!</h2>
-        <hr style="height:25px; visibility:hidden;">
+        <div id="sendHolder"><a id="sendButton"><h2>Send!</h2></a></div>
+        <hr style="height:15px; visibility:hidden;">
       </div>
+        <hr style="height:25px; visibility:hidden;">
     </div>
 
   </div>
+<!-- SEND SCRIPT -->
+<script>
+document.getElementById("sendButton").addEventListener("click", function() {
+  document.getElementById("sendHolder").innerHTML = "<h2>Sorry, our booking form is currently down - please phone!<h2>"
+} );
+
+</script>
 </body>
-<!-- SCROLLING -->
-
-
 </html>
