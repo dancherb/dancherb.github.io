@@ -23,9 +23,9 @@ div {
 #openingTimes table {
 	border-spacing: 0 5px;
 }
-#openingTimes table tr:nth-child(2n) {
+/*#openingTimes table tr:nth-child(2n) {
 	background-color: rgba(0, 0, 0, 0.5);
-}
+}*/
 a {
 	cursor: default;
 	text-decoration: none;
