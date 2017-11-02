@@ -64,7 +64,7 @@ i {
 	/*width: 2800px;*/
 	min-width: 1100px;
 }
-canvas {
+#canvas {
 	padding: 10px;
 	display: inline-block;
 	overflow: auto;
