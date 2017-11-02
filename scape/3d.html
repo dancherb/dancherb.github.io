@@ -1,8 +1,3 @@
-<!-- formula for the width, height of canvas based on map size rotated 45 degrees and height halfed.
-add on some map height for extra layers so + vertratio * max vert count [based on vertmulti probably]
-then shift everything proportionally to the right (x + half of what the added width was)
-and down (y + half of the added height) -->
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -93,7 +88,7 @@ and down (y + half of the added height) -->
           <hr style="height:8px; visibility:hidden;">Height Scale<br>
           <output id="showHeightScale">50</output>
           <input type="range" id="heightScale" min="0" max="200" value="50" class="slider"
-          oninput="showHeightScale.value=value" onchange="gogogo(false)">
+          oninput="showHeightScale.value=value" onchange="gogogo(true)">
 
       </div>
     </div>
@@ -104,7 +99,8 @@ and down (y + half of the added height) -->
     </div>
 
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- DISABLED FOR PERFORMANCE PURPOSES
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
     /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
     particlesJS.load('particles-js', '/particlesside.json', function() {
@@ -211,18 +207,6 @@ and down (y + half of the added height) -->
         }
         baseweight = 1-baseweight // base weight fills gap;
       }
-      // if(document.getElementById('gradientType1').checked) {
-      //   var gradientType = "Light"
-      // } else if(document.getElementById('gradientType2').checked) {
-      //   var gradientType = "Dark"
-      // } else {
-      //   var gradientType = "Off"
-      // }
-      // if(gradientType === "Dark") {
-      //   cbg.fillStyle = "black"
-      // } else {
-      //   cbg.fillStyle = "white"
-      // }
       cbg.globalAlpha = 0 // 0 for 3d version
       cbg.fillRect(0, 0, c.width, c.height);
       // base layer tiles
@@ -285,6 +269,7 @@ and down (y + half of the added height) -->
           btiles[i].relativeStrength = 1-((land+0.03)-btiles[i].strength)/((land+0.03)-land)
         }
         // use relativeStrength to shade individual tiles with height, and relativeWeight to map height
+
         //find relative weight by taking what percentage individual strength (from lower bound) is of weight range
         btiles[i].relativeWeight = (btiles[i].strength-lowestStrength)/weightRange
         //use this to judge terrain, dividing it out equally based on thresholds
@@ -425,7 +410,7 @@ and down (y + half of the added height) -->
        showGears(); setTimeout(gogogo.bind(null, false), 10);
      } )
     document.getElementById("heightScale").addEventListener("change", function() {
-       showGears(); setTimeout(gogogo.bind(null, false), 10);
+       showGears(); setTimeout(gogogo.bind(null, true), 10);
      } )
 
     document.getElementById("aboutButton").addEventListener("click", openAbout)
