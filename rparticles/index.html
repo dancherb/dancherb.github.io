@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>day 1</title>
+  <title>Particles Test</title>
   <link rel="stylesheet" href="style.css">
   <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
@@ -14,55 +14,6 @@
 <div id="root"></div>
 
 <script type="text/babel">
-
-class Hi extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {date: new Date()}
-  }
-  render() {
-    if(this.props.greet == "hello") {
-      return <h2>hello hello hello hello hello</h2>
-    }
-    //function stops after first return statement, so the following automatically acts as an "else"
-    return(
-    <div>
-      <h2>hello {this.props.greet}</h2>
-      {this.props.greet.length >= 6 && <h2>long</h2>}
-    </div> // return must always contain just one div or element, so use a container if needed
-    )
-  }
-}
-class MainPara extends React.Component {
-  render() {
-    // first part creates an array, second part randomly selects an index to access the array
-    const pBackground = ['red', 'green', 'blue', 'yellow'][Math.floor(Math.random()*4)]
-    return(
-      <p style = {{fontSize: "20px", border:"5px solid #ffffff", background: pBackground}}>
-        background currently is {pBackground=='blue' ? 'very' : 'not'} blue
-      </p>
-      //first set of curly brackets says it's javascript, second set says it's an object containing styles
-    )
-  }
-}
-class App extends React.Component {
-  render() {
-    const h2Style = { fontSize: "10px" };
-    return (
-      <div className="classy">
-        <div className="halfContain">
-          <h2 style={h2Style}>cat</h2>
-          {5 + 5}
-          <MainPara/>
-          <Hi greet="heya"/>
-        </div>
-        <div className="halfContain">
-          <img src="https://www.petfinder.com/wp-content/uploads/2012/11/91615172-find-a-lump-on-cats-skin-632x475.jpg"/>
-        </div>
-      </div>
-    )
-  }
-}
 
 class Particles extends React.Component {
   render() {
