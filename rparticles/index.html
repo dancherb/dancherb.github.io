@@ -51,7 +51,7 @@ ReactDOM.render(<ParticlesHolder/>, document.getElementById("root"))
 var pCount = 5
 /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
 for (i=0; i<pCount;i++) {
-  particlesJS.load(pCount+i, 'particles.json', function() {
+  particlesJS.load("pHold"+i, 'particles.json', function() {
     console.log('particle library loaded');
   });
 }
