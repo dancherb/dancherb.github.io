@@ -20,12 +20,12 @@ class Particles extends React.Component {
     var i = this.props.container
     var pStyle = {position: "absolute", zIndex: -1, left: i*(100/pCount)+"%", top: 0, width: (100/pCount)+"%", height: "100%", border: "5px solid white"}
     return(
-      <div style={pStyle}>hello {this.props.container}</div>
+      <div style={pStyle}>hi {this.props.container}</div>
     )
   }
 }
 var particles = []
-var pCount = 5
+var pCount = 10
 for (var i=0; i<pCount; i++) {
   particles.push(<Particles id={"pHold"+i} container={i} key={i}/>)
   // style={{background="blue", border: "5px solid red"}}
@@ -51,6 +51,7 @@ ReactDOM.render(<ParticlesHolder/>, document.getElementById("root"))
 var pCount = 5
 /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
 for (i=0; i<pCount;i++) {
+  console.log("pHold"+i)
   particlesJS.load("pHold"+i, 'particles.json', function() {
     console.log('particle library loaded');
   });
