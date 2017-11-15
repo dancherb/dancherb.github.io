@@ -45,7 +45,7 @@ body:hover {
 #container {
 	padding-top: 100px;
 	/*balances out the empty element beneath so that the text is centered - this padding is faded out once it opens*/
-  width: 500px;
+  width: 540px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -104,7 +104,7 @@ i {
 
 /*PROJECTS LIST*/
 .projectC, .projectO {
-	width: 500px;
+	width: 540px;
 }
 .projectC {
 	padding-bottom: 0px;
@@ -114,10 +114,6 @@ i {
 }
 .projectO:active {
 	opacity: 0.7;
-}
-
-#project4 {
-	opacity: 0.5;
 }
 
 /*properties of title, image, text when open vs closed*/
