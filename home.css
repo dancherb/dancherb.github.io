@@ -45,7 +45,7 @@ body:hover {
 #container {
 	padding-top: 100px;
 	/*balances out the empty element beneath so that the text is centered - this padding is faded out once it opens*/
-  width: 540px;
+  width: 500px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -104,7 +104,7 @@ i {
 
 /*PROJECTS LIST*/
 .projectC, .projectO {
-	width: 540px;
+	width: 500px;
 }
 .projectC {
 	padding-bottom: 0px;
