@@ -29,6 +29,8 @@
 			</div>
 	</div>
 
+<canvas id="canvas3D"></canvas>
+
 <div id="particles-js"></div>
 
 <script src="homescript.js"></script>
@@ -49,10 +51,6 @@ if(three !== true && three !== "on") {
 	particlesJS.load('particles-js', 'particles.json', function() {
  		console.log('particle.js loaded');
 	});
-	// make sure particle holder has right styling, and not overwritten by three.js "canvas" css
-	var elem = document.getElementById("particles-js");
-	elem.style.left = "25%";
-	elem.style.width = "50%";
 }
 </script>
 

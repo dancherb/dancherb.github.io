@@ -7,8 +7,9 @@ function start3D() {
         "width: 100vw; height: 100vh; display: block; position: fixed; top: 0; left: 0; z-index: -10");
     }
 
+var canvas = document.getElementById("canvas3D");
 var scene = new THREE.Scene()
-var renderer = new THREE.WebGLRenderer()
+var renderer = new THREE.WebGLRenderer({ canvas: canvas})
 
 camera = new THREE.PerspectiveCamera(
     35, // angle
