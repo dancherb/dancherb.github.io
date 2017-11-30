@@ -34,10 +34,22 @@
 <script src="homescript.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
 <script>
-particlesJS.load('particles-js', 'particles.json', function() {
-  console.log('particle.js loaded');
-});
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+var three = getUrlVars()["3d"];
+if(three !== true && three !== "on") {
+	particlesJS.load('particles-js', 'particles.json', function() {
+ 		console.log('particle.js loaded');
+	});
+}
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/88/three.min.js"></script>

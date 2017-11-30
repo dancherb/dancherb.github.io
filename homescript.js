@@ -51,7 +51,6 @@ vars[key] = value;
 return vars;
 }
 var id = getUrlVars()["id"];
-console.log(id)
 if(id == 2) {
   openProjects()
 }
