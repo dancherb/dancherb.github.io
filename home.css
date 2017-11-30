@@ -1,12 +1,3 @@
-/*PARTICLES*/
-#particles-js {
-	position: fixed;
-	left: 25%;
-	top: 0;
-	width: 50%;
-	height: 100%;
-	z-index: -2;
-}
 /* THREE.JS */
 canvas {
 	width: 100vw;
@@ -16,6 +7,15 @@ canvas {
 	top: 0;
 	left: 0;
 	z-index: -100;
+}
+/*PARTICLES*/
+#particles-js {
+	position: fixed;
+	left: 25%;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	z-index: -2;
 }
 /*GENERAL*/
 * { /*CSS reset*/

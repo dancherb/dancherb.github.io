@@ -1,4 +1,3 @@
-function start3D() {
   var projectsOpen = false;
   projectsText.style.fontSize = "0px" //keep 'projects' title invisible and tiny initially
   projectsText.style.opacity = 0;
@@ -42,7 +41,6 @@ function start3D() {
     projectsIcon.classList.toggle("fa-envelope-open-o");
     projectsIcon.classList.toggle("fa-envelope-o");
   }
-}
 
 // check if projects should start open (e.g. if coming straight back from flash page)
 function getUrlVars() {
