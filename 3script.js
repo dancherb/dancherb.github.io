@@ -1,5 +1,12 @@
 function start3D() {
 
+    var canvas = document.getElementsByTagName('canvas');
+    console.log(canvas)
+    for (var i = 0; i < canvas.length; i++) {
+        canvas[i].setAttribute("style",
+        "width: 100vw; height: 100vh; display: block; position: fixed; top: 0; left: 0; z-index: -10");
+    }
+
 var scene = new THREE.Scene()
 var renderer = new THREE.WebGLRenderer()
 
