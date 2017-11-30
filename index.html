@@ -50,9 +50,9 @@ if(three !== true && three !== "on") {
  		console.log('particle.js loaded');
 	});
 	// make sure particle holder has right styling, and not overwritten by three.js "canvas" css
-	var particleHolder = document.getElementById("particles-js");
-	particleHolder.setAttribute("style", "left:25%");
-	particleHolder.setAttribute("style", "width:50%");
+	var elem = document.getElementById("particles-js");
+	elem.style.left = "25%";
+	elem.style.width = "50%";
 }
 </script>
 
