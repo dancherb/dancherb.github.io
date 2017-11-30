@@ -74,7 +74,7 @@ function getUrlVars() {
     });
     return vars;
 }
-var three = getUrlVars()["3D"];
+var three = getUrlVars()["3d"];
 if(three === true || three == "on") {
     start3D()
 }
