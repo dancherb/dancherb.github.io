@@ -48,6 +48,29 @@ body:hover {
 	/*prevent selection cursor when rolling over*/
 	cursor: default;
 }
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f100; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555; 
+}
+
+
 ::-moz-selection {
 	background: #AFAFAF;
 }
@@ -57,12 +80,16 @@ body:hover {
 #container {
 	padding-top: 100px;
 	/*balances out the empty element beneath so that the text is centered - this padding is faded out once it opens*/
-  width: 500px;
+	/* min-width: 50vw;
+  width: 500px; */
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	/*background: rgba(224,224,224,0.5)*/
+	min-width: 50vw;
+	max-height: 100vh;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 a {
 	cursor: default;
