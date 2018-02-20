@@ -16,7 +16,7 @@ function openProjects() {
       project2.className = "projectO"
       project3.className = "projectO"
       project4.className = "projectO"
-      project5.className = "projectO"
+      // project5.className = "projectO"
     }
     container.style.paddingTop = "0px"
     //
@@ -31,7 +31,7 @@ function openProjects() {
     project2.className = "projectC"
     project3.className = "projectC"
     project4.className = "projectC"
-    project5.className = "projectC"
+    // project5.className = "projectC"
     //
     container.style.paddingTop = "100px"
     //

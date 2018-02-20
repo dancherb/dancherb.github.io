@@ -87,9 +87,9 @@ body:hover {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	min-width: 50vw;
-	max-height: 100vh;
-	overflow-y: auto;
-	overflow-x: hidden;
+	/* max-height: 100vh; */
+	/* overflow-y: auto; */
+	/* overflow-x: hidden; */
 }
 a {
 	cursor: default;
