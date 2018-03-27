@@ -1,0 +1,122 @@
+/*PARTICLES*/
+#particles-js {
+	position: fixed;
+	left: 20%;
+	top: 0;
+	width: 60%;
+	height: 100%;
+	z-index: -2;
+}
+/*GENERAL*/
+* { /*CSS reset*/
+	padding: 0;
+	margin: 0;
+}
+html {
+  height: 100%;
+}
+body {
+	background-color: #E0E0E0;
+	background: linear-gradient(to bottom right, #FAFAFA, #CFCFCF);
+	text-align: center;
+	font-size: 35px;
+	color: red;
+	font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
+}
+div {
+	display: inline-block;
+}
+body:hover {
+	/*prevent selection cursor when rolling over*/
+	cursor: default;
+}
+::-moz-selection {
+	background: #AFAFAF;
+}
+::selection {
+	background: #AFAFAF;
+}
+#container {
+  width: 700px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+a {
+	cursor: default;
+	text-decoration: none;
+	color: #171717;
+}
+.fa-check-circle-o:hover {
+	color: #AFAFAF;
+}
+.fa {
+	font-size: 45px;
+}
+a:hover {
+	color: #AFAFAF;
+}
+a:hover > fa {
+	color: #AFAFAF;
+}
+h1, h4, h5 {
+	font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
+	color: #171717;
+	display: inline;
+}
+
+/*TITLE CHERB TEXT*/
+#cherbtext {
+	position: relative;
+	transform:scale(1.25, 1.25);
+}
+#cherb1 {
+	height: 60%;
+  position: absolute;
+  color: #383838;
+  overflow: hidden;
+}
+#cherb2 {
+	color: #171717;
+}
+
+h4 {
+	font-size: 30px;
+}
+h5 {
+	font-size: 20px;
+}
+.fa-hand-o-left:hover {
+	color: #AFAFAF;
+}
+
+/*INPUTS*/
+input {
+	font-size: 30px;
+	font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
+	background-color: transparent;
+	border: 0px;
+}
+input:focus { /*remove blue outline on click, add own border*/
+    outline: 0;
+}
+#inputName {
+	width: 350px;
+}
+#inputEmail {
+	width: 350px;
+}
+#inputMessage {
+	width: 600px;
+	height: 160px;
+	font-size: 30px;
+	font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
+	background-color: transparent;
+	border: 0px;
+	resize: none;
+}
+#inputMessage:focus {
+	outline: 0;
+}
