@@ -1,0 +1,97 @@
+/*PARTICLES*/
+#particles-js {
+	position: fixed;
+	left: 20%;
+	top: 0;
+	width: 60%;
+	height: 100%;
+	z-index: -2;
+}
+/*GENERAL*/
+* { /*CSS reset*/
+	padding: 0;
+	margin: 0;
+}
+html {
+  height: 100%;
+}
+body {
+	background-color: #E0E0E0;
+	background: linear-gradient(to bottom right, #FAFAFA, #CFCFCF);
+	text-align: center;
+	font-size: 40px;
+	color: #171717;
+	font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
+}
+p {
+  font-size: 25px;
+}
+div {
+	display: inline-block;
+}
+body:hover {
+	/*prevent selection cursor when rolling over*/
+	cursor: default;
+}
+::-moz-selection {
+	background: #AFAFAF;
+}
+::selection {
+	background: #AFAFAF;
+}
+#container {
+  width: 700px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+a {
+	cursor: default;
+	text-decoration: none;
+	color: #171717;
+}
+h1, h4 {
+	font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
+	color: #171717;
+}
+h4 {
+	display: inline;
+}
+h5 {
+	font-family: 'Trebuchet MS', sans-serif;
+	color: #171717;
+	margin-bottom: 20px;
+	margin-top: 10px;
+	font-size: 20px;
+}
+
+/*TITLE CHERB TEXT*/
+#cherbtext {
+	position: relative;
+}
+#cherb1 {
+	height: 60%;
+  position: absolute;
+  color: #383838;
+  overflow: hidden;
+}
+#cherb2 {
+	color: #171717;
+}
+
+/*PROJECTS BUTTON*/
+i {
+	color:#171717;
+}
+.fa-home {
+  font-size: 30px;
+}
+.fa-home:hover {
+	color: #AFAFAF;
+}
+
+/*PROJECTS TEXT (h4)*/
+#projectsText {
+  padding-bottom: 30px;
+}
